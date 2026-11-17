@@ -1,0 +1,11 @@
+uuid: 5663d001-850c-41d2-bfea-5cdc275110cc
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - media
+id: media.dc_member_portrait
+label: 'Band member portrait'
+description: null
+targetEntityType: media
+cache: true

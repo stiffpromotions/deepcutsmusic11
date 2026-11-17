@@ -1,0 +1,25 @@
+uuid: a00d0e08-6786-4f72-aa8e-abee08a07d9c
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_add_ons
+    - node.type.add_on
+    - node.type.package
+id: node.package.field_add_ons
+field_name: field_add_ons
+entity_type: node
+bundle: package
+label: 'Available add-ons'
+description: 'Optional add-ons offered with this package.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      add_on: add_on
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,12 @@
+// navbar-expand-md in page.html.twig expands navigation from 768px.
+.site-primary-menu {
+  .nav-link { white-space: nowrap; }
+  .site-primary-menu__cta { white-space: nowrap; }
+
+  @include media-breakpoint-up(md) {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: .25rem;
+    .site-primary-menu__cta { margin-inline-start: .5rem; }
+  }
+}

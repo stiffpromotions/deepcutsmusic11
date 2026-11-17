@@ -1,0 +1,27 @@
+// Booking form uses the shared Deep Cuts palette, typography and button styles.
+.dc-booking-form {
+  max-width: 56.25rem;
+  margin: 0 auto;
+  padding-block: 1rem 5rem;
+  .webform-flexbox { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0 2rem; margin: 0; }
+  .webform-flex--container { margin: 0; }
+  .webform-flex { min-width: 0; }
+  .form-item { margin-bottom: 1.5rem; }
+  label:not(.visually-hidden) { color: $dc-text-heading; font-weight: 500; }
+  .form-control, .form-select {
+    min-height: 3rem;
+    border-color: $dc-divider;
+    border-radius: .375rem;
+    &:focus { border-color: $dc-primary; box-shadow: 0 0 0 .2rem rgba($dc-primary, .2); }
+  }
+  textarea.form-control { min-height: 10rem; }
+  .form-check { padding-left: 1.75rem; }
+  .form-check-input { margin-left: -1.75rem; border-color: $dc-primary; }
+  .form-check-input:checked { background-color: $dc-primary; }
+  .form-check .description { color: $dc-text-body; font-size: 1rem; }
+  .form-check .description p { margin-bottom: 0; }
+  .form-actions { margin-top: 2rem; margin-bottom: 1rem; }
+  .required-text { font-size: .875rem; }
+  .asterisk { color: $dc-primary; margin-right: .25rem; }
+  @include media-breakpoint-up(md) { .webform-flexbox { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+}

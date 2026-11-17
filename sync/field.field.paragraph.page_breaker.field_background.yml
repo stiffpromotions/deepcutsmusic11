@@ -1,0 +1,23 @@
+uuid: c0b82991-d9b9-40d5-a2a0-46f5a766d620
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background
+    - paragraphs.paragraphs_type.page_breaker
+  module:
+    - options
+id: paragraph.page_breaker.field_background
+field_name: field_background
+entity_type: paragraph
+bundle: page_breaker
+label: Background
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: white
+default_value_callback: ''
+settings: {  }
+field_type: list_string

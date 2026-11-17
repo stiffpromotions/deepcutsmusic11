@@ -1,0 +1,17 @@
+uuid: 4b578b05-ad4e-40a4-b1dd-aef77fb975a0
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - focal_point
+name: dc_member_portrait
+label: 'Band member portrait (420 × 260)'
+effects:
+  19c7cad3-4c07-43e3-b1c4-a760f6f4b97e:
+    uuid: 19c7cad3-4c07-43e3-b1c4-a760f6f4b97e
+    id: focal_point_scale_and_crop
+    weight: 0
+    data:
+      width: 420
+      height: 260
+      crop_type: focal_point

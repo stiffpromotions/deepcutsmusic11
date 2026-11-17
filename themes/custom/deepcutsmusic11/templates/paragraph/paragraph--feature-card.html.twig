@@ -1,0 +1,7 @@
+<article{{ attributes.addClass('dc-home-card') }}>{{ title_prefix }}{{ title_suffix }}
+  {% if card_url %}<a class="dc-home-card__link" href="{{ card_url }}">{% endif %}
+    <div class="dc-home-card__image">{{ card_image }}</div>
+    <h2>{{ paragraph.field_heading.value }}</h2>
+    <div class="dc-home-card__copy">{{ content.field_text }}</div>
+  {% if card_url %}</a>{% endif %}
+</article>

@@ -1,0 +1,27 @@
+uuid: 2c20037d-6172-41dd-8417-59fdad677919
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_image_preset
+field_name: field_image_preset
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: natural
+      label: 'Natural image ratio'
+    -
+      value: about_intro
+      label: 'About introduction (480 × 450)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

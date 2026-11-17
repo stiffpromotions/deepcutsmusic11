@@ -1,0 +1,30 @@
+{% set type = paragraph.bundle %}
+{% set classes = ['dc-section', 'dc-section--' ~ type|clean_class, 'dc-section--bg-' ~ section_background|clean_class, 'dc-section--' ~ section_width|clean_class, 'dc-section--columns-' ~ section_columns, 'dc-section--image-' ~ section_position, 'dc-section--layout-' ~ section_layout, 'dc-section--listing-' ~ section_listing|clean_class, section_bordered ? 'dc-section--bordered'] %}
+<section{{ attributes.addClass(classes) }}{% if type == 'reviews' and section_layout == 'carousel' %} data-quotes-carousel aria-roledescription="carousel"{% endif %}>
+  <div class="dc-section__inner">
+    {{ title_prefix }}
+    {% if section_heading and type != 'image_text' %}<h2 class="dc-section__heading">{{ section_heading }}</h2>{% endif %}
+    {{ title_suffix }}
+    {% if type == 'image_text' %}
+      <div class="dc-section__split">
+        <div class="dc-section__media">{{ content.field_section_image }}</div>
+        <div class="dc-section__copy">{% if section_heading %}<{{ home_intro ? 'h1' : 'h2' }} class="dc-section__heading">{{ section_heading }}</{{ home_intro ? 'h1' : 'h2' }}>{% endif %}{{ content.field_text }}{{ section_button }}</div>
+      </div>
+    {% elseif type == 'video' %}
+      <div class="dc-video__player">{{ content.field_video }}</div>
+    {% else %}
+      {% if content.field_text %}<div class="dc-section__copy">{{ content.field_text }}</div>{% endif %}
+      {% if section_items or section_view %}
+        <div class="dc-section__items"{% if type == 'reviews' and section_layout == 'carousel' %} tabindex="0" aria-label="{{ 'Client reviews: scroll to read more'|t }}"{% endif %}>{{ section_items }}{{ section_view }}</div>
+      {% endif %}
+      {{ section_button }}
+    {% endif %}
+    {% if type == 'reviews' and section_layout == 'carousel' %}
+      <div class="dc-section__controls" hidden>
+        <button class="btn btn-secondary" type="button" data-quote-direction="-1">{{ 'Previous review'|t }}</button>
+        <button class="btn btn-secondary" type="button" data-quote-direction="1">{{ 'Next review'|t }}</button>
+      </div>
+    {% endif %}
+    {{ content|without('field_text', 'field_section_image', 'field_video') }}
+  </div>
+</section>

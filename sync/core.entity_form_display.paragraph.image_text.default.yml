@@ -1,0 +1,89 @@
+uuid: 43b02e00-6259-41f9-8005-cecfdfbcf595
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_text.field_background
+    - field.field.paragraph.image_text.field_bordered
+    - field.field.paragraph.image_text.field_heading
+    - field.field.paragraph.image_text.field_image_position
+    - field.field.paragraph.image_text.field_image_preset
+    - field.field.paragraph.image_text.field_link
+    - field.field.paragraph.image_text.field_section_image
+    - field.field.paragraph.image_text.field_text
+    - field.field.paragraph.image_text.field_width
+    - paragraphs.paragraphs_type.image_text
+  module:
+    - link
+    - media_library
+    - text
+id: paragraph.image_text.default
+targetEntityType: paragraph
+bundle: image_text
+mode: default
+content:
+  field_background:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_bordered:
+    type: boolean_checkbox
+    weight: 9
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_heading:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_image_position:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image_preset:
+    type: options_select
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_section_image:
+    type: media_library_widget
+    weight: 2
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_text:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_width:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

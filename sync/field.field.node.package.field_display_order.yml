@@ -1,0 +1,25 @@
+uuid: 993fdae5-55e4-4934-b929-e54dee280861
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_order
+    - node.type.package
+id: node.package.field_display_order
+field_name: field_display_order
+entity_type: node
+bundle: package
+label: 'Display order'
+description: 'Lower numbers appear first when a listing uses this field.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

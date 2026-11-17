@@ -1,0 +1,11 @@
+uuid: 39b24e9a-9ffb-47b3-ac26-1a5f55495b7f
+langcode: en-gb
+status: true
+dependencies: {  }
+name: Add-on
+type: add_on
+description: 'An optional service or enhancement to a package.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

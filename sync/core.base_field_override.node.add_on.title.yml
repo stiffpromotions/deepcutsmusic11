@@ -1,0 +1,18 @@
+uuid: ff9008aa-7ef2-494c-b322-4717bbbd373f
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.add_on
+id: node.add_on.title
+field_name: title
+entity_type: node
+bundle: add_on
+label: 'Add-on name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

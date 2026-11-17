@@ -1,0 +1,22 @@
+uuid: 5faf4b30-eb1f-47d7-93c7-ed03b8891401
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_inclusions
+    - node.type.package
+  module:
+    - text
+id: node.package.field_inclusions
+field_name: field_inclusions
+entity_type: node
+bundle: package
+label: Inclusions
+description: 'Describe what is included in this package; lists are supported.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

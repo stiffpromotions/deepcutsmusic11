@@ -1,0 +1,27 @@
+uuid: 33192ad2-b2bf-43fe-98f6-9d7a7a11a1ea
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_category
+    - paragraphs.paragraphs_type.content_listing
+    - taxonomy.vocabulary.faq_category
+    - taxonomy.vocabulary.repertoire_category
+id: paragraph.content_listing.field_category
+field_name: field_category
+entity_type: paragraph
+bundle: content_listing
+label: 'Category (songs or FAQs)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      repertoire_category: repertoire_category
+      faq_category: faq_category
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,11 @@
+uuid: 93c441ad-6305-4dfa-9098-45ee7be842de
+langcode: en-gb
+status: true
+dependencies: {  }
+name: Package
+type: package
+description: 'An entertainment package and its inclusions.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

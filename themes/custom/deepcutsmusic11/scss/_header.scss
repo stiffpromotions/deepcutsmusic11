@@ -1,0 +1,25 @@
+.site-header {
+  // Match the expanded menu breakpoint; Bootstrap5 otherwise waits until lg.
+  @include media-breakpoint-up(md) {
+    .navbar-brand img { height: $navbar-brand-image-height-lg; }
+  }
+}
+
+.site-header--hero {
+  position: fixed;
+  top: var(--drupal-displace-offset-top, 0px);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: transparent;
+
+  .navbar { background: transparent !important; }
+  .navbar-brand, .nav-link { color: $dc-text-on-dark; }
+  .nav-link:hover, .nav-link:focus-visible { color: $dc-orange-200; }
+
+  &.is-scrolled, &:has(.navbar-collapse.show) { background: $dc-primary; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: background-color .2s ease;
+  }
+}

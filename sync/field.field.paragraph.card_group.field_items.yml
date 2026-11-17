@@ -1,0 +1,31 @@
+uuid: cc7a795d-4e06-4a40-ae8b-0c99bc6fa0b6
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_items
+    - node.type.add_on
+    - node.type.article
+    - node.type.band_member
+    - node.type.package
+    - paragraphs.paragraphs_type.card_group
+id: paragraph.card_group.field_items
+field_name: field_items
+entity_type: paragraph
+bundle: card_group
+label: 'Selected cards'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      package: package
+      add_on: add_on
+      band_member: band_member
+      article: article
+    auto_create: false
+field_type: entity_reference

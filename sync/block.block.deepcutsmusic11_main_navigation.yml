@@ -1,0 +1,27 @@
+uuid: e80290b3-77c7-445f-be0f-8a4e7f0d2497
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - deepcutsmusic11
+_core:
+  default_config_hash: h3bOO-zo5k3LAIV2fazqcSG8HGUxL2yKlaZYIq3G8Pw
+id: deepcutsmusic11_main_navigation
+theme: deepcutsmusic11
+region: nav_main
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: true
+visibility: {  }

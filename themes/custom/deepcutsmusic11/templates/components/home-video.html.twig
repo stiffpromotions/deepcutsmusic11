@@ -1,0 +1,9 @@
+<section class="dc-home-video" data-home-video data-video-id="{{ hero.video_id }}" aria-label="{{ 'Deep Cuts live performance'|t }}">
+  <div class="dc-home-video__poster">{{ hero.image }}</div>
+  <div class="dc-home-video__screen"><div data-youtube-player></div></div>
+  <div class="dc-home-video__controls">
+    <button type="button" class="dc-home-video__control" data-video-play hidden>{{ 'Play video'|t }}</button>
+    <button type="button" class="dc-home-video__control" data-video-mute hidden>{{ 'Unmute'|t }}</button>
+  </div>
+  <a class="dc-home-video__fallback" href="https://www.youtube.com/watch?v={{ hero.video_id }}" target="_blank" rel="noopener">{{ 'Watch Deep Cuts live on YouTube'|t }}</a>
+</section>

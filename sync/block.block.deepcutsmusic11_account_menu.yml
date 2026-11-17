@@ -1,0 +1,27 @@
+uuid: c74d4857-44a1-4f7b-9781-a7b28c3146e5
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - deepcutsmusic11
+_core:
+  default_config_hash: 6jOurG0TpyejIeOr6a3Hhze_tZBHgvmvCA3aXJnprkQ
+id: deepcutsmusic11_account_menu
+theme: deepcutsmusic11
+region: nav_additional
+weight: -7
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

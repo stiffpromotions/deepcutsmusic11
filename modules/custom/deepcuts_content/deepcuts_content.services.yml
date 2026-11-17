@@ -1,0 +1,5 @@
+services:
+  deepcuts_content.song_page_subscriber:
+    class: Drupal\deepcuts_content\EventSubscriber\SongPageSubscriber
+    tags:
+      - { name: event_subscriber }

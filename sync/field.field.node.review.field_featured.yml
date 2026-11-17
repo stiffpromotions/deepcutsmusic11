@@ -1,0 +1,23 @@
+uuid: 1a0ad2e4-c2aa-46de-96b6-32674fa1dfcd
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured
+    - node.type.review
+id: node.review.field_featured
+field_name: field_featured
+entity_type: node
+bundle: review
+label: 'Featured on homepage'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Featured
+  off_label: 'Not featured'
+field_type: boolean

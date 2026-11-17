@@ -1,0 +1,22 @@
+uuid: 59f0c0df-8d48-488e-9a08-9497cc34f323
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - deepcutsmusic11
+_core:
+  default_config_hash: tfaT2xMlASTg_4ziAQdsCrnVsRmWI49U_qFh8ldUKEs
+id: deepcutsmusic11_content
+theme: deepcutsmusic11
+region: content
+weight: -1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

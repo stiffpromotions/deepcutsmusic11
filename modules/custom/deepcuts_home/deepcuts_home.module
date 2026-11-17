@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Implements hook_views_query_alter().
+ * The first argument pins one published review, then samples four promoted ones.
+ */
+function deepcuts_home_views_query_alter(\Drupal\views\ViewExecutable $view, \Drupal\views\Plugin\views\query\QueryPluginBase $query): void {
+  if ($view->id() !== 'deepcuts_home_reviews') { return; }
+  $pinned = (int) ($view->args[0] ?? 187);
+  $query->addWhereExpression(0, '(node_field_data.promote = 1 OR node_field_data.nid = :dc_pinned)', [':dc_pinned' => $pinned]);
+  $query->addOrderBy(NULL, 'CASE WHEN node_field_data.nid = ' . $pinned . ' THEN 0 ELSE 1 END', 'ASC', 'dc_pinned_order');
+  $query->addOrderBy(NULL, 'RAND()', 'ASC', 'dc_random_order');
+}

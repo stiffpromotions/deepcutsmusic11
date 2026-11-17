@@ -1,0 +1,8 @@
+name: Deep Cuts home
+type: module
+description: Homepage review selection and reusable content.
+core_version_requirement: ^11
+package: Deep Cuts
+dependencies:
+  - drupal:views
+  - drupal:node

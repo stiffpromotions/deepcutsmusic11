@@ -1,0 +1,104 @@
+// Public account screens: keep Drupal's forms and validation, add a branded shell.
+body.path-user:not(.maintenance-page) {
+  main {
+    flex: 1 0 auto;
+    padding-block: clamp(2rem, 5vw, 4.5rem);
+    background: $dc-purple-50;
+  }
+
+  main .region-content {
+    max-width: 38rem;
+    margin-inline: auto;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    background: $dc-white;
+    border: 1px solid $dc-purple-100;
+    border-top: .25rem solid $dc-primary;
+    border-radius: .75rem;
+    box-shadow: 0 .75rem 2rem rgba($dc-purple-900, .06);
+  }
+
+  .block-page-title-block h1 {
+    @include font-size(2rem);
+    margin: 0 0 1.5rem;
+    line-height: 1.2;
+  }
+
+  // Keep both account links visible at phone widths, without a dropdown.
+  main .tabs-wrapper {
+    margin: 0 0 2rem;
+
+    .nav-tabs {
+      display: flex;
+      flex-direction: row !important;
+      flex-wrap: wrap;
+      gap: .375rem;
+      padding: .375rem;
+      border: 0;
+      border-radius: .5rem;
+      background: $dc-purple-50;
+      overflow: visible;
+    }
+
+    .nav-tabs .nav-item {
+      display: flex;
+      flex: 1 1 auto;
+      order: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .nav-tabs .nav-link {
+      flex: 1;
+      padding: .625rem .75rem;
+      border: 0;
+      border-radius: .375rem;
+      color: $dc-purple-900;
+      text-align: center;
+      font-size: .9375rem;
+      font-weight: 500;
+      text-decoration: none;
+
+      &:hover { background: $dc-purple-100; }
+      &.active { color: $dc-primary; background: $dc-white; box-shadow: 0 1px 4px rgba($dc-purple-900, .1); }
+      &:focus-visible { outline: 3px solid $dc-primary; outline-offset: 2px; }
+    }
+
+    .tab-toggle { display: none; }
+  }
+
+  main form {
+    .form-item { margin-block: 0 1.5rem; }
+    label:not(.visually-hidden) { margin-bottom: .5rem; color: $dc-text-heading; font-weight: 600; }
+    .form-control, .form-select {
+      min-height: 3.125rem;
+      padding: .75rem .875rem;
+      border: 1px solid $dc-purple-200;
+      border-radius: .375rem;
+      background-color: $dc-white;
+      color: $dc-text-body;
+      font-size: 1rem;
+
+      &:focus { border-color: $dc-primary; box-shadow: 0 0 0 .1875rem rgba($dc-primary, .15); }
+      &[aria-invalid='true'], &.error { border-color: $danger; }
+      &:disabled { background: $dc-purple-50; }
+    }
+    .description, .form-text:not(input) {
+      margin-top: .5rem;
+      color: $dc-text-muted;
+      font-size: .875rem;
+      overflow-wrap: anywhere;
+    }
+    .form-actions {
+      margin: 2rem 0 0;
+      .btn { width: 100%; min-height: 3.125rem; white-space: normal; }
+    }
+  }
+
+  main .alert, main [role='alert'], main [role='status'] {
+    overflow-wrap: anywhere;
+    a { font-weight: 600; }
+  }
+
+  main .profile { overflow-wrap: anywhere; }
+}

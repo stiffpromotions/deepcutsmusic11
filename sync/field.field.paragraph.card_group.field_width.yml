@@ -1,0 +1,23 @@
+uuid: 7b38dbea-c398-42a8-b9c8-18364a3c75fd
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_width
+    - paragraphs.paragraphs_type.card_group
+  module:
+    - options
+id: paragraph.card_group.field_width
+field_name: field_width
+entity_type: paragraph
+bundle: card_group
+label: 'Content width'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: standard
+default_value_callback: ''
+settings: {  }
+field_type: list_string

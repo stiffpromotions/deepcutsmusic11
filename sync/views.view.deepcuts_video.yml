@@ -1,0 +1,68 @@
+uuid: 7375179c-5967-455a-8db0-a6302fa764ad
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - media.type.remote_video
+    - media.type.video
+  module:
+    - media
+    - user
+id: deepcuts_video
+label: 'Deep Cuts: video'
+module: views
+description: ''
+tag: ''
+base_table: media_field_data
+base_field: mid
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      title: ''
+      pager:
+        type: none
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+      sorts: {  }
+      filters:
+        status:
+          id: status
+          table: media_field_data
+          field: status
+          entity_type: media
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+        type:
+          id: bundle
+          table: media_field_data
+          field: bundle
+          entity_type: media
+          entity_field: bundle
+          plugin_id: bundle
+          value:
+            video: video
+            remote_video: remote_video
+      style:
+        type: default
+        options:
+          row_class: dc-listing-row
+      row:
+        type: 'entity:media'
+        options:
+          view_mode: default
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - user.permissions
+      tags: {  }

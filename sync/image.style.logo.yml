@@ -1,0 +1,28 @@
+uuid: 291164b7-9c34-4be8-a1e0-7300f2163c8b
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - image_effects
+name: logo
+label: Logo
+effects:
+  3c5df5f1-91cc-4cbf-bf42-33f3d275f0b0:
+    uuid: 3c5df5f1-91cc-4cbf-bf42-33f3d275f0b0
+    id: image_effects_color_shift
+    weight: 0
+    data:
+      RGB: '#444444'
+  80086e82-8758-4a5e-8254-bec6fb97f67c:
+    uuid: 80086e82-8758-4a5e-8254-bec6fb97f67c
+    id: image_desaturate
+    weight: 1
+    data: {  }
+  03c3dc59-185b-444e-a582-05274b6cb132:
+    uuid: 03c3dc59-185b-444e-a582-05274b6cb132
+    id: image_scale
+    weight: 2
+    data:
+      width: 80
+      height: 80
+      upscale: false

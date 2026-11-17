@@ -1,0 +1,58 @@
+uuid: f9dafabf-f651-421a-959a-b24da0d7c168
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.page_breaker.field_background
+    - field.field.paragraph.page_breaker.field_heading
+    - field.field.paragraph.page_breaker.field_link
+    - field.field.paragraph.page_breaker.field_text
+    - field.field.paragraph.page_breaker.field_width
+    - paragraphs.paragraphs_type.page_breaker
+  module:
+    - link
+    - text
+id: paragraph.page_breaker.default
+targetEntityType: paragraph
+bundle: page_breaker
+mode: default
+content:
+  field_background:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_heading:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_text:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_width:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

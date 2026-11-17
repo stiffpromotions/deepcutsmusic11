@@ -1,0 +1,11 @@
+uuid: ec037302-c886-4b24-9906-4c329880034d
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - media
+id: media.dc_about_intro
+label: 'About introduction'
+description: null
+targetEntityType: media
+cache: true

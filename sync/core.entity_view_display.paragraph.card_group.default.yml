@@ -1,0 +1,22 @@
+uuid: 5bc440fa-1d95-473c-8737-761dbf93f17b
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card_group.field_background
+    - field.field.paragraph.card_group.field_columns
+    - field.field.paragraph.card_group.field_heading
+    - field.field.paragraph.card_group.field_items
+    - field.field.paragraph.card_group.field_width
+    - paragraphs.paragraphs_type.card_group
+id: paragraph.card_group.default
+targetEntityType: paragraph
+bundle: card_group
+mode: default
+content: {  }
+hidden:
+  field_background: true
+  field_columns: true
+  field_heading: true
+  field_items: true
+  field_width: true

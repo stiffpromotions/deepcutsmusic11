@@ -1,0 +1,19 @@
+uuid: 92f2e9ed-cea5-4b0c-a0de-ba2ca87e19aa
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_artist
+    - node.type.song
+id: node.song.field_artist
+field_name: field_artist
+entity_type: node
+bundle: song
+label: 'Original artist'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

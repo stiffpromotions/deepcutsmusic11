@@ -1,0 +1,27 @@
+uuid: 1757d630-81b1-4432-891e-7e440cb1a2fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - deepcutsmusic11
+_core:
+  default_config_hash: XcOYe-GGMzXNM5rjzZD26fnjnEmWFzRASiCbr9H19vg
+id: deepcutsmusic11_footer
+theme: deepcutsmusic11
+region: footer
+weight: -6
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Footer
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

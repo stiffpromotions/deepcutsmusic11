@@ -1,0 +1,17 @@
+uuid: 6ad6cec9-14da-441a-9613-a185c26f08bd
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - focal_point
+name: dc_about_intro
+label: 'About introduction (480 × 450)'
+effects:
+  1fba78a4-43dd-49d5-828e-77bea14426d3:
+    uuid: 1fba78a4-43dd-49d5-828e-77bea14426d3
+    id: focal_point_scale_and_crop
+    weight: 0
+    data:
+      width: 480
+      height: 450
+      crop_type: focal_point

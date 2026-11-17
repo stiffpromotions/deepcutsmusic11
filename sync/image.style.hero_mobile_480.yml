@@ -1,0 +1,17 @@
+uuid: 8b80404d-194c-4bae-a016-aa4aea9c90b3
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - focal_point
+name: hero_mobile_480
+label: 'Hero 480 × 320'
+effects:
+  e2423de8-3911-480d-badb-4c316b8624cd:
+    uuid: e2423de8-3911-480d-badb-4c316b8624cd
+    id: focal_point_scale_and_crop
+    weight: 0
+    data:
+      width: 480
+      height: 320
+      crop_type: focal_point

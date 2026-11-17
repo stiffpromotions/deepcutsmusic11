@@ -1,0 +1,19 @@
+uuid: ba3bf646-0808-4382-af64-cc40ea84220c
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_price_wording
+    - node.type.add_on
+id: node.add_on.field_price_wording
+field_name: field_price_wording
+entity_type: node
+bundle: add_on
+label: 'Price wording'
+description: 'Optional display wording, such as a starting price or contact-for-quote message.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

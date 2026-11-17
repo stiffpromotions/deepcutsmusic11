@@ -1,0 +1,46 @@
+uuid: 0b65880e-1c56-4a18-aa0e-28d7f7da46e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.page.body
+    - field.field.node.page.field_booking_form
+    - field.field.node.page.field_hero_image
+    - field.field.node.page.field_hero_video
+    - field.field.node.page.field_metatags
+    - field.field.node.page.field_sections
+    - field.field.node.page.field_seo
+    - field.field.node.page.field_social_image
+    - field.field.node.page.field_subtitle
+    - node.type.page
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: 8BgdRtLbtQ0F__o0FHSH0Mx5fvXOra9tfT1GmNKbRYw
+id: node.page.teaser
+targetEntityType: node
+bundle: page
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  links:
+    weight: 101
+    region: content
+hidden:
+  field_booking_form: true
+  field_hero_image: true
+  field_hero_video: true
+  field_metatags: true
+  field_sections: true
+  field_seo: true
+  field_social_image: true
+  field_subtitle: true

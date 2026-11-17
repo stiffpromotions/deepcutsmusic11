@@ -1,0 +1,6 @@
+_core:
+  default_config_hash: x7Oy4nGV8z1RVfSdRx-1ljGXz-qyreAj71hBKboIzPQ
+public_base_url: 'https://deepcutsmusic.co.uk'
+fallback_image: /themes/custom/deepcutsmusic11/images/social-share.jpg
+social_profiles:
+  - 'https://www.instagram.com/deepcutsmusic/'

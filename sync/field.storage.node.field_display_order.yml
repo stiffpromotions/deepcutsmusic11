@@ -1,0 +1,20 @@
+uuid: 3e7811ff-8a5c-4b1d-b917-098b42e1a4b7
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_display_order
+field_name: field_display_order
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

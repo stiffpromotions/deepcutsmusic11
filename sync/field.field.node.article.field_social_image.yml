@@ -1,0 +1,24 @@
+uuid: fa32950f-2e3f-4ea2-9120-6e4ee91a3d7b
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_social_image
+    - media.type.image
+    - node.type.article
+id: node.article.field_social_image
+field_name: field_social_image
+entity_type: node
+bundle: article
+label: 'Social sharing image'
+description: 'Optional: select an Image Media item. A 1200 × 630 focal-point crop is used; otherwise the branded sharing card is used.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+field_type: entity_reference

@@ -1,0 +1,18 @@
+uuid: 54826e99-7de4-42cc-8bb5-4535193a31c5
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.review
+id: node.review.title
+field_name: title
+entity_type: node
+bundle: review
+label: 'Review title (editorial label)'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

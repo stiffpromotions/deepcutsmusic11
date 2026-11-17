@@ -1,0 +1,22 @@
+uuid: c0915eda-868f-410c-aa1f-fba2ebb3839d
+langcode: en
+status: true
+dependencies:
+  theme:
+    - deepcutsmusic11
+_core:
+  default_config_hash: YAkSHngUer_eYJdBkSgIti0mMkYOrFC5m8PyIfCDOVM
+id: deepcutsmusic11_local_tasks
+theme: deepcutsmusic11
+region: content
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

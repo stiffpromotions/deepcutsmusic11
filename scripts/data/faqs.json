@@ -1,0 +1,26 @@
+{
+  "Pricing & Booking": [
+    ["What are your package options and fees?", "We offer multiple packages, from Corporate and Weddings to International and Festivals – you can find all the information on our <a href=\"/packages\">Packages page</a>. For a comprehensive outline for your event, we recommend <a href=\"/book-now\">a bespoke quote</a> based on your specific event and needs."],
+    ["How far in advance should we book?", "If you want the best chance of booking your favourite band, we recommend booking as early in advance as possible. But the general rule of thumb is to book once you’ve got your venue secured. It’s still possible to book last minute, but you might just have to keep your fingers and toes crossed."],
+    ["We have a unique event – can you provide a tailored quote?", "Absolutely! We’re well versed in unique events and tailoring performances to specific plans. <a href=\"/book-now\">Let us know what your event needs are</a> and we’ll be in touch to talk through the finer details."]
+  ],
+  "Planning & Details": [
+    ["How long do you perform for?", "We perform for up to 120 minutes, split into two x 60-minute or three x 40-minute sets as required for your event."],
+    ["Do you provide a DJ service?", "We do! As standard, we ensure there is a client-chosen playlist between sets so that atmosphere never drops. We also offer an manned DJ upgrade where one of the band read the room and select tracks – this is a more interactive option and is very popular at weddings and larger functions."],
+    ["Can you learn our first dance or a special request song?", "Absolutely! We learn your first dance or special request free of charge. Additional song requests that are not listed on the band’s published repertoire incur a charge. <a href=\"/book-now\">Drop a note in your enquiry</a> and we’ll also build that into your quote."],
+    ["Do you have experience with corporate events and luxury weddings?", "Yes, very much so! Over the years, we’ve performed at corporate events and luxury weddings across the UK and internationally, both as Deep Cuts and our former band Festival Nights. We’ve played for couples tying the knot at castles and grand estates, and hosted company events at a high-end London establishments – as well as plenty of private parties."]
+  ],
+  "Travel & Location": [
+    ["How far do you travel?", "We’re Bristol-based and travel throughout the UK and internationally."],
+    ["Can you perform internationally?", "Absolutely! International events are an entity unto themselves; we’re very happy to chat further, just <a href=\"/book-now\">drop us an enquiry</a> and we’ll be in touch."]
+  ],
+  "Logistics & Tech": [
+    ["Are you fully insured and PAT certified?", "Yes we are."],
+    ["Can you work with venue sound limiters?", "Yes – we often work at venues with sound limiters. We’re also happy to contact your venue directly to make sure we’re all on the same page."],
+    ["Do you work directly with venues and production teams?", "Absolutely. Over the years we’ve worked directly with countless venues and production teams to ensure that everything runs like clockwork. It’s quite possible we’ve worked with your chosen venue in the past, so let us know and we can make the arrangements."],
+    ["Do you bring your own PA and lighting?", "Yes, we do! We travel with our own industry-standard PA system, tour-grade microphones, and lighting as part of the price, which means you don’t need to go to the expense of hiring additional equipment."],
+    ["How much space and power do you require?", "For our electric set, we need a 3m x 5m space as minimum, but larger is better. For power, 2 x 13 amp supply."],
+    ["How long do you need to set up and sound check?", "We can turn around set up and sound check in 90 minutes, and we’ll always look to do this as a time that works best in your event planning. This might be when a room is turned around between wedding reception and the evening meal, or before the start of a corporate event."],
+    ["What happens if a band member is ill or there’s an emergency?", "You can plan for almost every contingency but sometimes life takes you by surprise. If a band member is unavailable or unwell on the day, we will engage a pre-arranged substitute performer from a pool of experienced professional musicians. We’re lucky enough to work with a wide network of supremely talented people!"]
+  ]
+}

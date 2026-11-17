@@ -1,0 +1,55 @@
+uuid: 23060e44-991e-487a-aaef-9d1a2d25fce2
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card_group.field_background
+    - field.field.paragraph.card_group.field_columns
+    - field.field.paragraph.card_group.field_heading
+    - field.field.paragraph.card_group.field_items
+    - field.field.paragraph.card_group.field_width
+    - paragraphs.paragraphs_type.card_group
+id: paragraph.card_group.default
+targetEntityType: paragraph
+bundle: card_group
+mode: default
+content:
+  field_background:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_columns:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_heading:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_items:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_width:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

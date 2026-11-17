@@ -1,0 +1,21 @@
+uuid: 8705f730-7c11-436e-9b2b-774f3b989ee4
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_artist
+field_name: field_artist
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

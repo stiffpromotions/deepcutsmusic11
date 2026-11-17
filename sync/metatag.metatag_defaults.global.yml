@@ -1,0 +1,17 @@
+uuid: f6415bb5-37b8-4b8e-991a-f023745eb000
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sL588ui1E_8-2c_UupwyYxcqX2OVyMFp3HTLbbFqvPc
+id: global
+label: Global
+tags:
+  title: '[current-page:title] | [site:name]'
+  robots: 'noindex, follow'
+  canonical_url: '<none>'
+  shortlink: '<none>'
+  og_site_name: '[site:name]'
+  og_type: website
+  og_locale: en_GB
+  twitter_cards_type: summary_large_image

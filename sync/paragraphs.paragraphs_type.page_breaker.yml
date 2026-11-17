@@ -1,0 +1,10 @@
+uuid: 25a19a3f-0dd8-4a2d-905a-36b947c64d88
+langcode: en-gb
+status: true
+dependencies: {  }
+id: page_breaker
+label: 'Page breaker'
+icon_uuid: null
+icon_default: null
+description: 'Deep Cuts reusable page breaker section.'
+behavior_plugins: {  }

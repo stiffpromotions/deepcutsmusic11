@@ -1,0 +1,20 @@
+// Videos follows the Figma page's 1200px content column and 80px desktop rhythm.
+.dc-videos {
+  .page-sections { max-width: 75rem; margin-inline: auto; padding-top: clamp(2rem, 5.56vw, 5rem); }
+  .dc-section { margin-bottom: clamp(2.5rem, 5.56vw, 5rem); }
+  .dc-section__heading { margin-bottom: clamp(1.5rem, 2.78vw, 2.5rem); }
+  .dc-section--bordered .dc-section__inner {
+    padding: clamp(1.5rem, 5.56vw, 5rem);
+    border-color: $dc-purple-100;
+  }
+  .dc-section--video .dc-section__inner { padding: 0; }
+  .dc-section--page-breaker { margin-bottom: 0; }
+  .dc-section--page-breaker .dc-section__inner {
+    padding: clamp(2rem, 5.56vw, 5rem) 0;
+  }
+  .dc-section--page-breaker .dc-section__copy {
+    color: $dc-text-muted;
+    overflow-wrap: anywhere;
+    p + p { margin-top: 2rem; }
+  }
+}

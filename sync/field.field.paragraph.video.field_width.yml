@@ -1,0 +1,23 @@
+uuid: 5a82ee55-5cac-4c44-ae13-4ed0082eada6
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_width
+    - paragraphs.paragraphs_type.video
+  module:
+    - options
+id: paragraph.video.field_width
+field_name: field_width
+entity_type: paragraph
+bundle: video
+label: 'Content width'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: standard
+default_value_callback: ''
+settings: {  }
+field_type: list_string

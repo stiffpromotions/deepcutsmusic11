@@ -1,0 +1,64 @@
+flexbox:
+  '#type': webform_flexbox
+  name:
+    '#type': textfield
+    '#title': Name
+    '#required': true
+    '#required_error': 'This field is required'
+    '#autocomplete': name
+  email:
+    '#type': email
+    '#title': Email
+    '#required': true
+    '#required_error': 'This field is required'
+    '#autocomplete': email
+flexbox_01:
+  '#type': webform_flexbox
+  event:
+    '#type': select
+    '#title': Event
+    '#options':
+      corporate: Corporate
+      wedding: Wedding
+      private_party: 'Private Party'
+      festival: Festival
+      other: Other
+    '#empty_option': 'Please select'
+  date:
+    '#type': date
+    '#title': Date
+flexbox_02:
+  '#type': webform_flexbox
+  event_capacity:
+    '#type': select
+    '#title': 'Event capacity'
+    '#options':
+      up_to_100: 'Up to 100'
+      '101_250': '101-250'
+      '251_500': '251-500'
+      '501_1000': '501-1000'
+      1000_plus: '1000+'
+    '#empty_option': 'Please select'
+message:
+  '#type': textarea
+  '#title': Message
+  '#placeholder': 'What do we need to know about your event?'
+mailing_list:
+  '#type': checkbox
+  '#title': 'Mailing list'
+  '#description': '<p>I’d also like to join your mailing list – sign me up!</p>'
+  '#title_display': invisible
+  '#description_display': after
+legal:
+  '#type': checkbox
+  '#title': Legal
+  '#description': '<p>I have read and understand the <a href="/privacy-policy" target="_blank" rel="noopener">Privacy</a> and <a href="/cookie-policy" target="_blank" rel="noopener">Cookie</a> Policies</p>'
+  '#title_display': invisible
+  '#description_display': after
+  '#required': true
+  '#required_error': 'This field is required'
+actions:
+  '#type': webform_actions
+  '#title': 'Submit button(s)'
+  '#submit__label': Submit
+  '#suffix': '<div class="required-text"><span class="asterisk">*</span>Required</div>'

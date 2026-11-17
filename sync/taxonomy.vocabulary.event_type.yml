@@ -1,0 +1,9 @@
+uuid: 96b67a49-b5dc-41f4-8e37-9b33e0d72b5f
+langcode: en-gb
+status: true
+dependencies: {  }
+name: 'Event types'
+vid: event_type
+description: 'Event types used to group reviews.'
+weight: 0
+new_revision: false

@@ -1,0 +1,10 @@
+uuid: e553c24f-26eb-429f-b3ee-8c5ed8183913
+langcode: en-gb
+status: true
+dependencies: {  }
+id: image_text
+label: 'Image and text'
+icon_uuid: null
+icon_default: null
+description: 'Deep Cuts reusable image and text section.'
+behavior_plugins: {  }

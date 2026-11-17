@@ -1,0 +1,17 @@
+uuid: 98778d76-051d-4fdb-aba4-394c6b621962
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - focal_point
+name: hero_wide_2880
+label: 'Hero 2880 × 800'
+effects:
+  b939ad68-656d-46d0-8f92-0faef47c6c7d:
+    uuid: b939ad68-656d-46d0-8f92-0faef47c6c7d
+    id: focal_point_scale_and_crop
+    weight: 0
+    data:
+      width: 2880
+      height: 800
+      crop_type: focal_point

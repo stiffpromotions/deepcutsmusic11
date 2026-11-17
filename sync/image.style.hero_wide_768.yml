@@ -1,0 +1,17 @@
+uuid: 9328891d-b274-4807-9023-ad18b675fb10
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - focal_point
+name: hero_wide_768
+label: 'Hero 768 × 213'
+effects:
+  593d8e77-7e67-4098-a13f-445ac63311e7:
+    uuid: 593d8e77-7e67-4098-a13f-445ac63311e7
+    id: focal_point_scale_and_crop
+    weight: 0
+    data:
+      width: 768
+      height: 213
+      crop_type: focal_point

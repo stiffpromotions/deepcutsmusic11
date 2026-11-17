@@ -1,0 +1,23 @@
+uuid: 2f4edcf7-8ce3-415a-ad81-572faf94f526
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_listing
+    - paragraphs.paragraphs_type.content_listing
+  module:
+    - options
+id: paragraph.content_listing.field_listing
+field_name: field_listing
+entity_type: paragraph
+bundle: content_listing
+label: Listing
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: song
+default_value_callback: ''
+settings: {  }
+field_type: list_string

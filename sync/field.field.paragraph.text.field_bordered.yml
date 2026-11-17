@@ -1,0 +1,23 @@
+uuid: 85ea303b-df67-4827-8e44-b6d0eca86448
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bordered
+    - paragraphs.paragraphs_type.text
+id: paragraph.text.field_bordered
+field_name: field_bordered
+entity_type: paragraph
+bundle: text
+label: 'Bordered introduction'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Bordered
+  off_label: Plain
+field_type: boolean

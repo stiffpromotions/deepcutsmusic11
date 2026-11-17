@@ -1,0 +1,84 @@
+uuid: f744aef0-48eb-4694-b18a-c78fb68c7228
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.node.review.field_display_order
+    - field.field.node.review.field_event_date
+    - field.field.node.review.field_event_type
+    - field.field.node.review.field_featured
+    - field.field.node.review.field_quote
+    - field.field.node.review.field_review_note
+    - field.field.node.review.field_reviewer
+    - field.field.node.review.field_source_link
+    - node.type.review
+  module:
+    - datetime
+    - link
+    - text
+    - user
+id: node.review.default
+targetEntityType: node
+bundle: review
+mode: default
+content:
+  field_event_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_event_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_quote:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_review_note:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_reviewer:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_source_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_display_order: true
+  field_featured: true

@@ -1,0 +1,17 @@
+uuid: 9b26244a-74d8-427a-aa06-1dc2b9900488
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - focal_point
+name: deepcuts_social
+label: 'Social sharing (1200 × 630)'
+effects:
+  4a1f56c7-2eec-4745-862c-67d834103927:
+    uuid: 4a1f56c7-2eec-4745-862c-67d834103927
+    id: focal_point_scale_and_crop
+    weight: 0
+    data:
+      width: 1200
+      height: 630
+      crop_type: focal_point

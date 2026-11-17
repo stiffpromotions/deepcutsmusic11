@@ -1,0 +1,10 @@
+uuid: b7fe4f84-8378-40d9-b73d-8f7740899c9b
+langcode: en-gb
+status: true
+dependencies: {  }
+id: card_group
+label: 'Card group'
+icon_uuid: null
+icon_default: null
+description: 'Deep Cuts reusable card group section.'
+behavior_plugins: {  }

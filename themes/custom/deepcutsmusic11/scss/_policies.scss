@@ -1,0 +1,14 @@
+// Policy content: semantic headings, lists and horizontally scrollable tables.
+.dc-policy {
+  overflow-wrap: anywhere;
+  h2 { font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: .75rem; }
+  > :first-child { margin-top: 0; }
+  li + li { margin-top: .375rem; }
+  &__table { max-width: 100%; overflow-x: auto; margin-block: 1.5rem; }
+  &__table:focus-visible { outline: 3px solid $dc-primary; outline-offset: 3px; }
+  table { width: 100%; min-width: 38rem; border-collapse: collapse; }
+  caption { caption-side: top; color: $dc-text-body; font-weight: 600; }
+  th, td { border: 1px solid $dc-purple-100; padding: .875rem; vertical-align: top; }
+  thead th { background: $dc-purple-100; }
+  tbody th { background: $dc-purple-50; }
+}

@@ -1,0 +1,11 @@
+uuid: 8ed5a915-7abf-46de-9665-3f28a0b69df4
+langcode: en-gb
+status: true
+dependencies: {  }
+name: Logo
+type: logo
+description: 'Company logos displayed in the homepage strip.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

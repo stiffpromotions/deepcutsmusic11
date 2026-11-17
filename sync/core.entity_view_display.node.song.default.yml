@@ -1,0 +1,40 @@
+uuid: 2e9a5a81-83ec-45a0-9691-ffa99a6b7956
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.node.song.field_artist
+    - field.field.node.song.field_display_order
+    - field.field.node.song.field_repertoire_category
+    - node.type.song
+  module:
+    - user
+id: node.song.default
+targetEntityType: node
+bundle: song
+mode: default
+content:
+  field_artist:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 23
+    region: content
+  field_repertoire_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 24
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_display_order: true

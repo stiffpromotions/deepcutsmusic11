@@ -1,0 +1,25 @@
+uuid: 7d9ab929-9169-408e-81c2-db0cabac8537
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.home_reviews.field_items
+    - paragraphs.paragraphs_type.home_reviews
+id: paragraph.home_reviews.default
+targetEntityType: paragraph
+bundle: home_reviews
+mode: default
+content:
+  field_items:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

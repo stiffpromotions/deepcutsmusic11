@@ -1,0 +1,11 @@
+<section{{ attributes.addClass('dc-home-reviews') }} data-home-reviews aria-roledescription="carousel" aria-label="{{ 'Client reviews'|t }}">
+  {{ title_prefix }}{{ title_suffix }}
+  <div class="dc-home-reviews__inner">{{ home_reviews }}
+    <div class="dc-home-reviews__controls" hidden>
+      <button type="button" data-review-prev aria-label="{{ 'Previous review'|t }}">←</button>
+      <div data-review-dots></div>
+      <button type="button" data-review-next aria-label="{{ 'Next review'|t }}">→</button>
+    </div>
+    <p class="visually-hidden" data-review-status aria-live="polite" aria-atomic="true"></p>
+  </div>
+</section>

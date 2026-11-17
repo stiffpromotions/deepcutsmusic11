@@ -1,0 +1,50 @@
+uuid: 24cd9613-ccd5-4796-a970-55151543b098
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sections
+    - node.type.page
+    - paragraphs.paragraphs_type.card_group
+    - paragraphs.paragraphs_type.content_listing
+    - paragraphs.paragraphs_type.feature_cards
+    - paragraphs.paragraphs_type.home_reviews
+    - paragraphs.paragraphs_type.image_text
+    - paragraphs.paragraphs_type.page_breaker
+    - paragraphs.paragraphs_type.reviews
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.video
+  module:
+    - entity_reference_revisions
+id: node.page.field_sections
+field_name: field_sections
+entity_type: node
+bundle: page
+label: 'Page sections'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      text: text
+      image_text: image_text
+      card_group: card_group
+      reviews: reviews
+      page_breaker: page_breaker
+      content_listing: content_listing
+      video: video
+      feature_cards: feature_cards
+      home_reviews: home_reviews
+    auto_create: false
+    target_bundles_drag_drop:
+      feature_cards:
+        weight: 20
+        enabled: true
+      home_reviews:
+        weight: 20
+        enabled: true
+field_type: entity_reference_revisions

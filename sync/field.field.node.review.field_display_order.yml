@@ -1,0 +1,25 @@
+uuid: 03c842f4-e748-4d31-a701-ae9eb8d11ed9
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_order
+    - node.type.review
+id: node.review.field_display_order
+field_name: field_display_order
+entity_type: node
+bundle: review
+label: 'Display order'
+description: 'Lower numbers appear first when a listing uses this field.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

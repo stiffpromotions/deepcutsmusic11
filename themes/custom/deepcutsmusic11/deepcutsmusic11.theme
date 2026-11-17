@@ -1,0 +1,208 @@
+<?php
+
+/**
+ * @file
+ * Deep Cuts 11 theme file.
+ */
+
+use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function deepcutsmusic11_preprocess_html(array &$variables): void {
+  if (in_array('maintenance-page', $variables['html']['#attributes']['class'] ?? [], TRUE)) {
+    $variables['head_title'] = ['title' => t('Back on stage soon'), 'name' => \Drupal::config('system.site')->get('name')];
+    $variables['#attached']['html_head'][] = [
+      ['#tag' => 'meta', '#attributes' => ['name' => 'robots', 'content' => 'noindex, follow']],
+      'deepcuts_maintenance_robots',
+    ];
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function deepcutsmusic11_preprocess_node(array &$variables): void {
+  $node = $variables['node'];
+  if ($node->bundle() === 'page' && $variables['view_mode'] === 'full') {
+    if (\Drupal::service('path.matcher')->isFrontPage()) { $variables['attributes']['class'][] = 'dc-homepage'; }
+    $path = '/node/' . $node->id();
+    if (\Drupal::service('path_alias.manager')->getPathByAlias('/videos') === $path) {
+      $variables['attributes']['class'][] = 'dc-videos';
+    }
+    $variables['elements']['#cache']['tags'][] = 'path_alias_list';
+  }
+}
+
+/**
+ * Implements hook_preprocess_menu__footer().
+ */
+function deepcutsmusic11_preprocess_menu__footer(array &$variables): void {
+  $actions_started = FALSE;
+  foreach ($variables['items'] as &$item) {
+    $item['is_footer_social'] = str_contains($item['url']->toString(), 'instagram.com/');
+    $classes = $item['url']->getOption('attributes')['class'] ?? [];
+    $item['is_footer_cta'] = in_array('btn-nav', (array) $classes, TRUE);
+    $item['is_footer_action'] = !$actions_started && ($item['is_footer_social'] || $item['is_footer_cta']);
+    $actions_started = $actions_started || $item['is_footer_action'];
+  }
+}
+
+/**
+ * Implements hook_preprocess_menu__main().
+ */
+function deepcutsmusic11_preprocess_menu__main(array &$variables): void {
+  $booking_path = \Drupal::service('path_alias.manager')->getPathByAlias('/book-now');
+  foreach ($variables['items'] as &$item) {
+    $url = $item['url'];
+    $item['is_booking_cta'] = $url->isRouted()
+      && $url->getRouteName() === 'entity.node.canonical'
+      && '/node/' . ($url->getRouteParameters()['node'] ?? '') === $booking_path;
+  }
+}
+
+/**
+ * Builds the reusable image hero on canonical page routes.
+ */
+function _deepcutsmusic11_page_hero(): ?array {
+  if (\Drupal::routeMatch()->getRouteName() !== 'entity.node.canonical') {
+    return NULL;
+  }
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof NodeInterface && \Drupal::service('path.matcher')->isFrontPage() && $node->hasField('field_hero_video') && !$node->field_hero_video->isEmpty()) {
+    $media = $node->field_hero_video->entity;
+    if ($media && $media->access('view') && $media->hasField('field_media_oembed_video')) {
+      $url = $media->field_media_oembed_video->value;
+      preg_match('~(?:v=|youtu\.be/|embed/)([a-zA-Z0-9_-]{11})~', $url, $match);
+      if (!empty($match[1])) {
+        $poster = $node->field_hero_image->entity;
+        $image = $poster ? \Drupal::entityTypeManager()->getViewBuilder('media')->viewField($poster->field_media_image, ['type' => 'image', 'label' => 'hidden', 'settings' => ['image_style' => 'deepcuts_home_intro', 'image_link' => '']]) : [];
+        return ['video_id' => $match[1], 'image' => $image];
+      }
+    }
+  }
+  if (!$node instanceof NodeInterface || !$node->hasField('field_hero_image') || $node->get('field_hero_image')->isEmpty()) {
+    return NULL;
+  }
+  $media = $node->get('field_hero_image')->entity;
+  if (!$media || !$media->access('view') || !$media->hasField('field_media_image')) {
+    return NULL;
+  }
+  $item = $media->get('field_media_image')->first();
+  if (!$item || !$item->entity) {
+    return NULL;
+  }
+  $image = [
+    '#theme' => 'responsive_image',
+    '#responsive_image_style_id' => 'deepcuts_hero',
+    '#uri' => $item->entity->getFileUri(),
+    '#width' => $item->width,
+    '#height' => $item->height,
+    '#alt' => '',
+    '#attributes' => ['loading' => 'eager', 'fetchpriority' => 'high', 'decoding' => 'async'],
+  ];
+  CacheableMetadata::createFromObject($node)
+    ->addCacheableDependency($media)
+    ->addCacheableDependency($item->entity)
+    ->addCacheableDependency($media->access('view', NULL, TRUE))
+    ->addCacheableDependency(\Drupal::entityTypeManager()->getStorage('responsive_image_style')->load('deepcuts_hero'))
+    ->applyTo($image);
+  return ['title' => $node->label(), 'image' => $image];
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function deepcutsmusic11_preprocess_page(array &$variables): void {
+  $variables['page_hero'] = _deepcutsmusic11_page_hero();
+  if ($variables['page_hero']) {
+    $variables['#attached']['library'][] = 'deepcutsmusic11/hero';
+    if (\Drupal::service('path.matcher')->isFrontPage()) {
+      $variables['home_logos'] = \Drupal\views\Views::getView('deepcuts_logos')->buildRenderable('default');
+      $variables['#attached']['library'][] = 'deepcutsmusic11/home';
+      // A different promoted selection is required on each full page request.
+      \Drupal::service('page_cache_kill_switch')->trigger();
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function deepcutsmusic11_preprocess_block(array &$variables): void {
+  if ($variables['plugin_id'] === 'page_title_block' && _deepcutsmusic11_page_hero()) {
+    // The hero supplies the page's single H1.
+    $variables['content'] = [];
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function deepcutsmusic11_preprocess_paragraph(array &$variables): void {
+  $p = $variables['paragraph'];
+  $variables['home_intro'] = \Drupal::service('path.matcher')->isFrontPage() && $p->bundle() === 'image_text';
+  if ($variables['home_intro'] && ($media = $p->field_section_image->entity) && $media->access('view')) {
+    $variables['content']['field_section_image'] = \Drupal::entityTypeManager()->getViewBuilder('media')->viewField($media->field_media_image, ['type' => 'image', 'label' => 'hidden', 'settings' => ['image_style' => 'deepcuts_home_intro', 'image_link' => '', 'image_loading' => ['attribute' => 'lazy']]]);
+  }
+  if ($p->bundle() === 'feature_cards') {
+    $variables['cards'] = \Drupal::entityTypeManager()->getViewBuilder('paragraph')->viewMultiple($p->field_cards->referencedEntities());
+  }
+  if ($p->bundle() === 'feature_card') {
+    $variables['card_url'] = $p->field_link->isEmpty() ? NULL : $p->field_link->first()->getUrl();
+    $media = $p->field_section_image->entity;
+    if ($media && $media->access('view')) {
+      $variables['card_image'] = \Drupal::entityTypeManager()->getViewBuilder('media')->viewField($media->field_media_image, ['type' => 'image', 'label' => 'hidden', 'settings' => ['image_style' => 'large', 'image_link' => '', 'image_loading' => ['attribute' => 'lazy']]]);
+    }
+  }
+  if ($p->bundle() === 'home_reviews') {
+    $variables['home_reviews'] = \Drupal\views\Views::getView('deepcuts_home_reviews')->buildRenderable('default', [(int) ($p->field_items->target_id ?? 187)]);
+  }
+  $value = static fn ($name, $default = '') => $p->hasField($name) && !$p->get($name)->isEmpty() ? $p->get($name)->value : $default;
+  foreach (['heading' => '', 'background' => 'white', 'width' => 'standard', 'columns' => '1', 'bordered' => FALSE, 'layout' => 'grid', 'listing' => ''] as $key => $default) {
+    $variables['section_' . $key] = $value('field_' . $key, $default);
+  }
+  $variables['section_position'] = $value('field_image_position', 'left');
+  if ($p->bundle() === 'image_text' && $value('field_image_preset') === 'about_intro') {
+    $variables['content']['field_section_image'] = \Drupal::entityTypeManager()->getViewBuilder('paragraph')->viewField($p->get('field_section_image'), [
+      'type' => 'entity_reference_entity_view', 'label' => 'hidden',
+      'settings' => ['view_mode' => 'dc_about_intro', 'link' => FALSE],
+    ]);
+  }
+  $variables['section_items'] = [];
+  $metadata = CacheableMetadata::createFromObject($p)->addCacheContexts(['url.path']);
+  if ($p->hasField('field_items')) {
+    foreach ($p->get('field_items')->referencedEntities() as $node) {
+      $access = $node->access('view', NULL, TRUE);
+      $metadata->addCacheableDependency($node)->addCacheableDependency($access);
+      if ($access->isAllowed()) {
+        $variables['section_items'][] = \Drupal::entityTypeManager()->getViewBuilder('node')->view($node, 'dc_card');
+      }
+    }
+  }
+  $view_id = NULL;
+  $args = [];
+  if ($p->bundle() === 'content_listing' && in_array($variables['section_listing'], ['song', 'faq', 'package', 'add_on', 'band_member', 'video', 'review'], TRUE)) {
+    $view_id = 'deepcuts_' . $variables['section_listing'];
+    if (in_array($variables['section_listing'], ['song', 'faq'], TRUE) && !$p->get('field_category')->isEmpty()) {
+      $args[] = $p->get('field_category')->target_id;
+    }
+  }
+  elseif ($p->bundle() === 'reviews' && $p->get('field_items')->isEmpty()) {
+    $view_id = 'deepcuts_review';
+  }
+  if ($view_id && ($view = \Drupal\views\Views::getView($view_id))) {
+    $display = $p->bundle() === 'content_listing' && $variables['section_listing'] === 'review' ? 'all_reviews' : 'default';
+    $variables['section_view'] = $view->buildRenderable($display, $args);
+  }
+  if ($p->hasField('field_link') && !$p->get('field_link')->isEmpty()) {
+    $link = $p->get('field_link')->first();
+    $variables['section_button'] = ['#type' => 'link', '#title' => $link->title, '#url' => $link->getUrl(), '#attributes' => ['class' => ['btn', 'btn-secondary']]];
+  }
+  $metadata->applyTo($variables['content']);
+  if ($p->bundle() === 'reviews' && $variables['section_layout'] === 'carousel') {
+    $variables['content']['#attached']['library'][] = 'deepcutsmusic11/paragraphs';
+  }
+}

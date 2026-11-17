@@ -1,0 +1,38 @@
+.page-hero {
+  position: relative;
+  isolation: isolate;
+  aspect-ratio: 3 / 2;
+  background: $dc-purple-900;
+  color: $dc-text-on-dark;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba($dc-text-heading, .55);
+    pointer-events: none;
+  }
+
+  &__image {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+
+    picture, img { display: block; width: 100%; height: 100%; }
+    img { object-fit: cover; }
+  }
+
+  &__content {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: clamp(1.5rem, 4vw, 4rem);
+    padding-top: 6rem;
+  }
+
+  &__title { color: inherit; margin: 0; }
+
+  @include media-breakpoint-up(md) { aspect-ratio: 18 / 5; }
+}

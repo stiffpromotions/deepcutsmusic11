@@ -1,0 +1,11 @@
+uuid: 55bd38db-453f-4cd3-a221-2b874f025c5d
+langcode: en-gb
+status: true
+dependencies: {  }
+name: Review
+type: review
+description: 'An individual client review for Testimonials and homepage selections.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,51 @@
+uuid: 51c86189-0e60-4194-bfe9-b9d994689a14
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.dc_card
+    - field.field.node.band_member.body
+    - field.field.node.band_member.field_display_order
+    - field.field.node.band_member.field_image
+    - field.field.node.band_member.field_role
+    - node.type.band_member
+  module:
+    - text
+    - user
+id: node.band_member.dc_card
+targetEntityType: node
+bundle: band_member
+mode: dc_card
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: dc_member_portrait
+      link: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_role:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_display_order: true

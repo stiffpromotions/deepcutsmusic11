@@ -1,0 +1,9 @@
+<article{{ attributes.addClass('node', 'node--type-page', 'node--id-' ~ node.id) }}>
+  {{ title_prefix }}{{ title_suffix }}
+  {% if not node.field_sections.isEmpty %}
+    <div class="page-sections">{{ content.field_sections }}</div>
+    {{ content|without('body', 'field_sections', 'field_subtitle', 'field_hero_image', 'field_hero_video') }}
+  {% else %}
+    {{ content }}
+  {% endif %}
+</article>

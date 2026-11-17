@@ -1,0 +1,23 @@
+uuid: a3d8617c-1116-41ec-b7aa-86a29f1b52b2
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_position
+    - paragraphs.paragraphs_type.image_text
+  module:
+    - options
+id: paragraph.image_text.field_image_position
+field_name: field_image_position
+entity_type: paragraph
+bundle: image_text
+label: 'Image position on desktop'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: left
+default_value_callback: ''
+settings: {  }
+field_type: list_string

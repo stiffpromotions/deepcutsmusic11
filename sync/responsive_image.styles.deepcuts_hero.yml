@@ -1,0 +1,38 @@
+uuid: db6fc3df-302c-4a33-8185-93cfd0fcced4
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - image.style.hero_mobile_1536
+    - image.style.hero_mobile_480
+    - image.style.hero_mobile_768
+    - image.style.hero_wide_1440
+    - image.style.hero_wide_2880
+    - image.style.hero_wide_768
+  theme:
+    - deepcutsmusic11
+id: deepcuts_hero
+label: 'Deep Cuts page hero'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - hero_wide_768
+        - hero_wide_1440
+        - hero_wide_2880
+    breakpoint_id: deepcutsmusic11.screen.md-min
+    multiplier: 1x
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - hero_mobile_480
+        - hero_mobile_768
+        - hero_mobile_1536
+    breakpoint_id: deepcutsmusic11.screen.sm-max
+    multiplier: 1x
+breakpoint_group: deepcutsmusic11.screen
+fallback_image_style: hero_wide_1440

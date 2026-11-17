@@ -1,0 +1,10 @@
+uuid: 7cd36882-4b7b-4d5e-a91d-1c18987e9473
+langcode: en-gb
+status: true
+dependencies: {  }
+id: reviews
+label: Reviews
+icon_uuid: null
+icon_default: null
+description: 'Deep Cuts reusable reviews section.'
+behavior_plugins: {  }

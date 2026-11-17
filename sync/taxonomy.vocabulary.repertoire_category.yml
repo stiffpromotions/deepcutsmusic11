@@ -1,0 +1,9 @@
+uuid: d23215d1-4adf-40fe-b70a-14a90458b75d
+langcode: en-gb
+status: true
+dependencies: {  }
+name: 'Repertoire categories'
+vid: repertoire_category
+description: 'Sections used to group songs in the repertoire.'
+weight: 0
+new_revision: false

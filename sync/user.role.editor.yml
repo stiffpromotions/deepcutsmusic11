@@ -1,0 +1,117 @@
+uuid: ac5ed22b-c551-40ec-8a15-2529dd9a9b66
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.restricted_html
+    - media.type.audio
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
+    - node.type.add_on
+    - node.type.article
+    - node.type.band_member
+    - node.type.faq
+    - node.type.logo
+    - node.type.package
+    - node.type.page
+    - node.type.review
+    - node.type.song
+    - taxonomy.vocabulary.event_type
+    - taxonomy.vocabulary.faq_category
+    - taxonomy.vocabulary.repertoire_category
+    - taxonomy.vocabulary.tags
+  module:
+    - contextual
+    - file
+    - filter
+    - media
+    - node
+    - paragraphs
+    - path
+    - system
+    - taxonomy
+    - toolbar
+    - yoast_seo
+id: editor
+label: Editor
+weight: 3
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access content'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access media overview'
+  - 'access site in maintenance mode'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'create add_on content'
+  - 'create article content'
+  - 'create audio media'
+  - 'create band_member content'
+  - 'create document media'
+  - 'create faq content'
+  - 'create image media'
+  - 'create logo content'
+  - 'create package content'
+  - 'create page content'
+  - 'create remote_video media'
+  - 'create review content'
+  - 'create song content'
+  - 'create terms in event_type'
+  - 'create terms in faq_category'
+  - 'create terms in repertoire_category'
+  - 'create terms in tags'
+  - 'create url aliases'
+  - 'create video media'
+  - 'delete any add_on content'
+  - 'delete any article content'
+  - 'delete any audio media'
+  - 'delete any band_member content'
+  - 'delete any document media'
+  - 'delete any faq content'
+  - 'delete any image media'
+  - 'delete any logo content'
+  - 'delete any package content'
+  - 'delete any page content'
+  - 'delete any remote_video media'
+  - 'delete any review content'
+  - 'delete any song content'
+  - 'delete any video media'
+  - 'delete own files'
+  - 'delete terms in event_type'
+  - 'delete terms in faq_category'
+  - 'delete terms in repertoire_category'
+  - 'delete terms in tags'
+  - 'edit any add_on content'
+  - 'edit any article content'
+  - 'edit any audio media'
+  - 'edit any band_member content'
+  - 'edit any document media'
+  - 'edit any faq content'
+  - 'edit any image media'
+  - 'edit any logo content'
+  - 'edit any package content'
+  - 'edit any page content'
+  - 'edit any remote_video media'
+  - 'edit any review content'
+  - 'edit any song content'
+  - 'edit any video media'
+  - 'edit terms in event_type'
+  - 'edit terms in faq_category'
+  - 'edit terms in repertoire_category'
+  - 'edit terms in tags'
+  - 'revert all revisions'
+  - 'use text format basic_html'
+  - 'use text format restricted_html'
+  - 'use yoast seo'
+  - 'view all revisions'
+  - 'view media'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view the administration theme'
+  - 'view unpublished paragraphs'

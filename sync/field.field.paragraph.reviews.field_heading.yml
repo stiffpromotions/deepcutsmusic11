@@ -1,0 +1,19 @@
+uuid: e6227d0f-58c1-438f-a904-761cd502f529
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.reviews
+id: paragraph.reviews.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: reviews
+label: Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

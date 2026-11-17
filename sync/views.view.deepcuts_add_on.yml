@@ -1,0 +1,81 @@
+uuid: 6875c93c-e6f4-4105-aea0-381f25c3f04b
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.add_on
+  module:
+    - node
+    - user
+id: deepcuts_add_on
+label: 'Deep Cuts: add_on'
+module: views
+description: ''
+tag: ''
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      title: ''
+      pager:
+        type: none
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+      sorts:
+        field_display_order_value:
+          id: field_display_order_value
+          table: node__field_display_order
+          field: field_display_order_value
+          plugin_id: standard
+          order: ASC
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          entity_type: node
+          entity_field: nid
+          plugin_id: standard
+          order: ASC
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            add_on: add_on
+      style:
+        type: default
+        options:
+          row_class: dc-listing-row
+      row:
+        type: 'entity:node'
+        options:
+          view_mode: dc_card
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }

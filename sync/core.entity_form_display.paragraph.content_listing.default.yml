@@ -1,0 +1,55 @@
+uuid: 66eb96dc-1647-4447-96cb-854ee14677e9
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.content_listing.field_background
+    - field.field.paragraph.content_listing.field_category
+    - field.field.paragraph.content_listing.field_heading
+    - field.field.paragraph.content_listing.field_listing
+    - field.field.paragraph.content_listing.field_width
+    - paragraphs.paragraphs_type.content_listing
+id: paragraph.content_listing.default
+targetEntityType: paragraph
+bundle: content_listing
+mode: default
+content:
+  field_background:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_category:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_heading:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_listing:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_width:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

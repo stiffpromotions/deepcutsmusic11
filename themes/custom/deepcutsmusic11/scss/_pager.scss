@@ -1,0 +1,12 @@
+// Bootstrap5's Drupal pager template uses .pagination / .page-item / .page-link.
+// State colours come from the Bootstrap variables rather than a separate palette.
+.pagination {
+  gap: .5rem;
+  flex-wrap: wrap;
+
+  .page-link {
+    border-radius: .625rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+}

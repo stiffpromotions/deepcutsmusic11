@@ -1,0 +1,46 @@
+uuid: cda554f5-d7cf-4d25-9054-ddc22d46fc89
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_text.field_background
+    - field.field.paragraph.image_text.field_bordered
+    - field.field.paragraph.image_text.field_heading
+    - field.field.paragraph.image_text.field_image_position
+    - field.field.paragraph.image_text.field_image_preset
+    - field.field.paragraph.image_text.field_link
+    - field.field.paragraph.image_text.field_section_image
+    - field.field.paragraph.image_text.field_text
+    - field.field.paragraph.image_text.field_width
+    - paragraphs.paragraphs_type.image_text
+  module:
+    - text
+id: paragraph.image_text.default
+targetEntityType: paragraph
+bundle: image_text
+mode: default
+content:
+  field_section_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_background: true
+  field_bordered: true
+  field_heading: true
+  field_image_position: true
+  field_image_preset: true
+  field_link: true
+  field_width: true

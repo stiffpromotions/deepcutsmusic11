@@ -1,0 +1,10 @@
+uuid: 9176b9ca-e3bb-44c2-bf87-aac53ad35e99
+langcode: en-gb
+status: true
+dependencies: {  }
+id: video
+label: Video
+icon_uuid: null
+icon_default: null
+description: 'A titled video from the Media Library. Add and reorder as many videos as needed.'
+behavior_plugins: {  }

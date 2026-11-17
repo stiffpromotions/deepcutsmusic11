@@ -1,0 +1,22 @@
+uuid: eb5c5aab-bc84-47db-af27-3a95ac595321
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - deepcutsmusic11
+_core:
+  default_config_hash: 6W0A9Odiayji6U-wes5oKO0TtL-DeTwHZPJJYMGLcXs
+id: deepcutsmusic11_help
+theme: deepcutsmusic11
+region: content
+weight: -3
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

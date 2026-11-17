@@ -1,0 +1,27 @@
+.dc-maintenance {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: clamp(1.25rem, 5vw, 4rem);
+  background: $dc-purple-900;
+  color: $dc-orange-50;
+  text-align: center;
+
+  &__inner { width: 100%; max-width: 42rem; }
+  &__brand { margin-bottom: 2rem; }
+  &__brand img { display: block; width: 6.5rem; height: 6.5rem; object-fit: contain; margin-inline: auto; }
+  &__panel {
+    padding: clamp(1.5rem, 5vw, 3.5rem);
+    border: 1px solid rgba($dc-orange-50, .25);
+    border-radius: 1rem;
+    background: $dc-primary;
+    box-shadow: 0 1rem 3rem rgba($dc-text-heading, .15);
+  }
+  &__eyebrow { margin-bottom: 1.25rem; color: $dc-orange-200; font-size: .8125rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+  h1 { @include font-size(2.5rem); color: inherit; margin-bottom: 1.5rem; line-height: 1.15; }
+  &__message { font-size: 1.0625rem; overflow-wrap: anywhere; }
+  &__message p:last-child { margin-bottom: 0; }
+  &__login { margin-top: 2rem; min-height: 3rem; }
+  &__login:focus-visible { outline-color: $dc-orange-50; box-shadow: none; }
+  &__help { max-width: 26rem; margin: 1.25rem auto 0; font-size: .875rem; }
+}

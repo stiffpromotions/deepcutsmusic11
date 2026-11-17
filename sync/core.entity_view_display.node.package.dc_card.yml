@@ -1,0 +1,55 @@
+uuid: 760e5db6-2db8-41ad-a03a-2ae22553a0a7
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.dc_card
+    - field.field.node.package.body
+    - field.field.node.package.field_add_ons
+    - field.field.node.package.field_display_order
+    - field.field.node.package.field_image
+    - field.field.node.package.field_inclusions
+    - field.field.node.package.field_price_wording
+    - node.type.package
+  module:
+    - text
+    - user
+id: node.package.dc_card
+targetEntityType: node
+bundle: package
+mode: dc_card
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: dc_package_style
+      link: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_price_wording:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_add_ons: true
+  field_display_order: true
+  field_inclusions: true

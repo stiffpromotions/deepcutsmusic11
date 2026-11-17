@@ -1,0 +1,38 @@
+// Figma Default / Hover / Click variants. Width grows with the label.
+.btn {
+  letter-spacing: .01em;
+  text-decoration: none;
+
+  &:focus-visible {
+    outline: .1875rem solid $dc-purple-900;
+    outline-offset: .1875rem;
+    box-shadow: 0 0 0 .1875rem $dc-white;
+  }
+}
+
+.btn-primary {
+  @include button-variant(
+    $dc-orange-500, $dc-orange-500, $dc-button-text,
+    $dc-purple-300, $dc-purple-300, $dc-purple-900,
+    $dc-purple-500, $dc-purple-500, $dc-button-text,
+    $dc-purple-300, $dc-purple-300, $dc-purple-900
+  );
+}
+
+.btn-secondary {
+  @include button-variant(
+    $dc-purple-500, $dc-purple-500, $dc-button-text,
+    $dc-purple-100, $dc-purple-100, $dc-purple-900,
+    $dc-purple-500, $dc-purple-500, $dc-button-text,
+    $dc-purple-300, $dc-purple-300, $dc-purple-900
+  );
+}
+
+.btn-nav {
+  @include button-variant(
+    $dc-orange-500, $dc-orange-500, $dc-orange-50,
+    $dc-orange-200, $dc-orange-200, $dc-orange-900,
+    $dc-orange-700, $dc-orange-700, $dc-button-text,
+    $dc-purple-300, $dc-purple-300, $dc-purple-900
+  );
+}

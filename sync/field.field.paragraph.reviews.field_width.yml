@@ -1,0 +1,23 @@
+uuid: 7e83931d-f322-46c0-b34f-be29e13652c9
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_width
+    - paragraphs.paragraphs_type.reviews
+  module:
+    - options
+id: paragraph.reviews.field_width
+field_name: field_width
+entity_type: paragraph
+bundle: reviews
+label: 'Content width'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: standard
+default_value_callback: ''
+settings: {  }
+field_type: list_string

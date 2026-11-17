@@ -1,0 +1,33 @@
+uuid: ed9c6b5b-1aaf-4be3-a84a-614654d8f7ce
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.dc_card
+    - field.field.node.faq.field_answer
+    - field.field.node.faq.field_display_order
+    - field.field.node.faq.field_faq_category
+    - node.type.faq
+  module:
+    - text
+    - user
+id: node.faq.dc_card
+targetEntityType: node
+bundle: faq
+mode: dc_card
+content:
+  field_answer:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_display_order: true
+  field_faq_category: true

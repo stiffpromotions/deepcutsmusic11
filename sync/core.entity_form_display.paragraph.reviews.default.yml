@@ -1,0 +1,55 @@
+uuid: b4d88cac-c7e2-4965-8150-b32f36e7a425
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.reviews.field_background
+    - field.field.paragraph.reviews.field_heading
+    - field.field.paragraph.reviews.field_items
+    - field.field.paragraph.reviews.field_layout
+    - field.field.paragraph.reviews.field_width
+    - paragraphs.paragraphs_type.reviews
+id: paragraph.reviews.default
+targetEntityType: paragraph
+bundle: reviews
+mode: default
+content:
+  field_background:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_heading:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_items:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_layout:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_width:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

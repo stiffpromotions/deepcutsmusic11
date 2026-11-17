@@ -1,0 +1,31 @@
+{% set type = node.bundle %}
+{% if type == 'song' %}
+  <div{{ attributes.addClass('dc-song') }}>{{ label }} – {{ node.field_artist.value }}</div>
+{% elseif type == 'review' %}
+  <figure{{ attributes.addClass('dc-review') }}>
+    <blockquote>{{ content.field_quote }}</blockquote>
+    <figcaption><span class="dc-review__attribution">– {{ content.field_reviewer }}</span>{{ content.field_review_note }}</figcaption>
+  </figure>
+{% elseif type == 'faq' %}
+  <article{{ attributes.addClass('dc-faq') }}><h3>{{ label }}</h3><div>{{ content.field_answer }}</div></article>
+{% elseif type == 'band_member' %}
+  <article{{ attributes.addClass('dc-member') }}>
+    {{ title_prefix }}{{ title_suffix }}
+    <div class="dc-member__image">{{ content.field_image }}</div>
+    <h3 class="dc-member__name">{{ label }}</h3>
+    <div class="dc-member__role">{{ content.field_role }}</div>
+    <div class="dc-member__bio">{{ content.body }}</div>
+  </article>
+{% elseif type in ['package', 'add_on'] %}
+  <article{{ attributes.addClass('dc-offering', 'dc-offering--' ~ type|clean_class) }}>
+    {{ title_prefix }}{{ title_suffix }}
+    {% if not node.field_image.isEmpty %}<div class="dc-offering__image">{{ content.field_image }}</div>{% endif %}
+    <h3>{{ label }}</h3>
+    <div class="dc-offering__copy">{{ content.body }}{{ content.field_price_wording }}</div>
+  </article>
+{% else %}
+  <article{{ attributes.addClass('dc-card') }}>
+    {{ title_prefix }}{{ title_suffix }}{{ content.field_image }}
+    <div class="dc-card__copy"><h3><a href="{{ url }}">{{ label }}</a></h3>{{ content|without('field_image', 'links') }}</div>
+  </article>
+{% endif %}

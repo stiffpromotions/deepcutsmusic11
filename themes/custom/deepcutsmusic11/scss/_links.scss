@@ -1,0 +1,21 @@
+// Content links inherit Bootstrap's palette values; do not restyle nav items.
+a {
+  text-underline-offset: .2em;
+  text-decoration-thickness: .0625rem;
+
+  &:focus-visible {
+    outline: .1875rem solid $dc-primary;
+    outline-offset: .1875rem;
+  }
+}
+
+// Cards provide their own hover treatment; keep their text free of underlines.
+.card a,
+.dc-card a,
+.dc-home-card a,
+.dc-offering a,
+.dc-member a {
+  &, &:hover, &:focus-visible {
+    text-decoration: none;
+  }
+}

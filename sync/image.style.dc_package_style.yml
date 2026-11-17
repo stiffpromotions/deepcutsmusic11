@@ -1,0 +1,17 @@
+uuid: 66e495eb-500f-4516-9b48-65d9890f3151
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - focal_point
+name: dc_package_style
+label: 'Package style (307 × 260)'
+effects:
+  737e070c-283b-41fe-a97f-2b4eb0a11859:
+    uuid: 737e070c-283b-41fe-a97f-2b4eb0a11859
+    id: focal_point_scale_and_crop
+    weight: 0
+    data:
+      width: 307
+      height: 260
+      crop_type: focal_point

@@ -1,0 +1,16 @@
+{{ attach_library('deepcutsmusic11/global-styling') }}
+<div class="dc-maintenance">
+  <div class="dc-maintenance__inner">
+    <header class="dc-maintenance__brand" role="banner">
+      {% if logo %}<img src="{{ logo }}" alt="{{ site_name|default('Deep Cuts') }}" width="104" height="104">{% endif %}
+    </header>
+    <main id="main-content" class="dc-maintenance__panel" role="main" tabindex="-1">
+      <p class="dc-maintenance__eyebrow">{{ 'Soundcheck in progress'|t }}</p>
+      <h1>{{ 'Back on stage soon'|t }}</h1>
+      {{ page.highlighted }}
+      <div class="dc-maintenance__message">{{ page.content }}</div>
+      <a class="btn btn-nav dc-maintenance__login" href="{{ path('user.login', {}, {'query': {'destination': '/'}}) }}">{{ 'Admin login'|t }}</a>
+      <!--<p class="dc-maintenance__help">{{ 'Site owners can sign in to preview the website and manage content.'|t }}</p>-->
+    </main>
+  </div>
+</div>

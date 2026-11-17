@@ -1,0 +1,23 @@
+uuid: fd0b6a18-0215-4e57-8f31-9ad0e34f1e78
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background
+    - paragraphs.paragraphs_type.content_listing
+  module:
+    - options
+id: paragraph.content_listing.field_background
+field_name: field_background
+entity_type: paragraph
+bundle: content_listing
+label: Background
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: white
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deep Cuts component reference</title>
+<link rel="stylesheet" href="../themes/custom/deepcutsmusic11/css/fonts.css">
+<link rel="stylesheet" href="../themes/custom/deepcutsmusic11/css/style.css">
+<main class="container py-5">
+  <h1>Deep Cuts components</h1>
+  <p>Figma palette and button reference. Hover, press, and tab through the controls to review states.</p>
+  <h2>Buttons and links</h2>
+  <div class="d-flex flex-wrap gap-3 mb-4">
+    <button class="btn btn-nav" type="button">Navigation Button</button>
+    <button class="btn btn-primary" type="button">Primary Button</button>
+    <button class="btn btn-secondary" type="button">Secondary Button</button>
+    <button class="btn btn-primary" type="button" disabled>Disabled</button>
+  </div>
+  <p><a href="#surfaces">A content link</a></p>
+  <h2>Pager</h2>
+  <nav aria-label="Example pages"><ul class="pagination">
+    <li class="page-item disabled"><span class="page-link">Previous</span></li>
+    <li class="page-item active"><span class="page-link" aria-current="page">1</span></li>
+    <li class="page-item"><a class="page-link" href="#pager-note">2</a></li>
+    <li class="page-item"><a class="page-link" href="#pager-note">Next</a></li>
+  </ul></nav>
+  <p id="pager-note">Static pager specimen; no content is paginated here.</p>
+  <h2 id="surfaces">Surfaces</h2>
+  <div class="row g-3">
+    <div class="col-md-4"><div class="bg-purple-50 p-4">Purple 50 · #F5F1FB</div></div>
+    <div class="col-md-4"><div class="bg-purple-100 p-4">Purple 100 · #E8DDF7</div></div>
+    <div class="col-md-4"><div class="bg-purple-200 p-4">Purple 200 · #D1BCEA</div></div>
+    <div class="col-md-4"><div class="bg-orange-50 p-4">Orange 50 · #FFF9EC</div></div>
+    <div class="col-md-4"><div class="bg-orange-200 p-4">Orange 200 · #FCE39A</div></div>
+    <div class="col-md-4"><div class="bg-orange-500 p-4">Orange 500 · #D9A321</div></div>
+    <div class="col-md-6"><section class="surface-brand p-4"><h3>Brand purple</h3><p>Light text and <a href="#surfaces">a surface link</a>.</p><button class="btn btn-nav" type="button">Book now</button></section></div>
+    <div class="col-md-6"><section class="surface-dark p-4"><h3>Dark surface</h3><p>Light text and <a href="#surfaces">a surface link</a>.</p><button class="btn btn-secondary" type="button">Find out more</button></section></div>
+  </div>
+</main>
+</html>

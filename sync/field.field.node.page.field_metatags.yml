@@ -1,0 +1,21 @@
+uuid: 05420d6c-10c8-429e-93fd-813c70cfc1f6
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatags
+    - node.type.page
+  module:
+    - metatag
+id: node.page.field_metatags
+field_name: field_metatags
+entity_type: node
+bundle: page
+label: 'SEO and social metadata'
+description: 'Edit the SEO title and description here. Open Graph and X inherit them unless explicitly overridden.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

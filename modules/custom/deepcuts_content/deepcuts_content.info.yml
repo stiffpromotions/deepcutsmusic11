@@ -1,0 +1,7 @@
+name: Deep Cuts content
+type: module
+description: Site-specific behaviour for Deep Cuts content.
+package: Deep Cuts
+core_version_requirement: ^11
+dependencies:
+  - drupal:node

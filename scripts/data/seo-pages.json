@@ -1,0 +1,14 @@
+{
+  "/": {"title": "Deep Cuts | Live band for weddings and events", "description": "Bring your event to life with Deep Cuts. Explore our electric, acoustic and roaming live music packages, watch videos and get in touch about your date.", "focus": "Deep Cuts live band"},
+  "/about": {"title": "Meet the band | Deep Cuts", "description": "Meet the musicians behind Deep Cuts and discover the professional experience and personalities that bring our live performances to life.", "focus": "Deep Cuts band", "schema": "AboutPage"},
+  "/packages": {"title": "Live music packages | Deep Cuts", "description": "Explore Deep Cuts electric, acoustic and roaming music packages, plus options and add-ons to help shape the live music for your event.", "focus": "live music packages"},
+  "/videos": {"title": "Videos | Deep Cuts", "description": "Explore the Deep Cuts video page for a taste of the live music experience. Get in touch to discuss music for your wedding, party or corporate event.", "focus": "Deep Cuts videos", "schema": "CollectionPage"},
+  "/repertoire": {"title": "Repertoire and song list | Deep Cuts", "description": "Browse the Deep Cuts repertoire, from modern bangers and 90s and 00s hits to vintage classics and acoustic favourites. Find the sound for your event.", "focus": "Deep Cuts repertoire", "schema": "CollectionPage"},
+  "/testimonials": {"title": "Client testimonials | Deep Cuts", "description": "Read what clients say about Deep Cuts and the live music we bring to weddings, parties and corporate events.", "focus": "Deep Cuts testimonials", "schema": "CollectionPage"},
+  "/faqs": {"title": "Live band booking FAQs | Deep Cuts", "description": "Find answers to common questions about booking Deep Cuts, including performance timings, equipment and planning the live music for your event.", "focus": "booking Deep Cuts"},
+  "/book-now": {"title": "Enquire about your event | Deep Cuts", "description": "Planning a wedding, party or corporate event? Contact Deep Cuts with your date and event details to discuss availability and live music options.", "focus": "book Deep Cuts", "schema": "ContactPage"},
+  "/privacy-policy": {"title": "Privacy policy | Deep Cuts", "description": "Read how Deep Cuts handles personal information, including information you provide when making an event enquiry."},
+  "/cookie-policy": {"title": "Cookie policy | Deep Cuts", "description": "Read about cookies and similar technologies on the Deep Cuts website and how to manage your preferences."},
+  "/thank-you": {"title": "Thank you | Deep Cuts", "description": "Thank you for your enquiry to Deep Cuts.", "robots": "noindex, follow"},
+  "/error": {"title": "Page not found | Deep Cuts", "description": "The page you requested could not be found. Explore Deep Cuts or contact us about your event.", "robots": "noindex, follow"}
+}

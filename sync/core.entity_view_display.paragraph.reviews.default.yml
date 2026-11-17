@@ -1,0 +1,22 @@
+uuid: 72f916c5-0b1b-4d31-8b6c-cac45a7f888f
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.reviews.field_background
+    - field.field.paragraph.reviews.field_heading
+    - field.field.paragraph.reviews.field_items
+    - field.field.paragraph.reviews.field_layout
+    - field.field.paragraph.reviews.field_width
+    - paragraphs.paragraphs_type.reviews
+id: paragraph.reviews.default
+targetEntityType: paragraph
+bundle: reviews
+mode: default
+content: {  }
+hidden:
+  field_background: true
+  field_heading: true
+  field_items: true
+  field_layout: true
+  field_width: true

@@ -1,0 +1,25 @@
+uuid: aea0598c-9928-4fa9-a751-0bd154c0ac81
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image
+    - media.type.image
+    - node.type.band_member
+id: node.band_member.field_image
+field_name: field_image
+entity_type: node
+bundle: band_member
+label: Portrait
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    auto_create: false
+field_type: entity_reference

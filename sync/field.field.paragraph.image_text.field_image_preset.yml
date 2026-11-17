@@ -1,0 +1,23 @@
+uuid: c5d9b09d-430b-41f0-ba59-ab027c1eb562
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_preset
+    - paragraphs.paragraphs_type.image_text
+  module:
+    - options
+id: paragraph.image_text.field_image_preset
+field_name: field_image_preset
+entity_type: paragraph
+bundle: image_text
+label: 'Image preset'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: natural
+default_value_callback: ''
+settings: {  }
+field_type: list_string

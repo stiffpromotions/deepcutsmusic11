@@ -1,0 +1,23 @@
+global-styling:
+  css:
+    theme:
+      css/fonts.css: {}
+      css/style.css: {}
+paragraphs:
+  js:
+    js/paragraphs.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+hero:
+  js:
+    js/hero.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+home:
+  js:
+    js/home.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

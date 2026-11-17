@@ -1,0 +1,28 @@
+uuid: 68baf747-ef36-4aab-992b-11891e58c0eb
+langcode: en-gb
+status: true
+dependencies: {  }
+id: node__article
+label: 'Content: Article'
+tags:
+  og_type: article
+  schema_article_type: Article
+  schema_article_headline: '[node:title]'
+  schema_article_date_published: '[node:created:custom:c]'
+  schema_article_date_modified: '[node:changed:custom:c]'
+  schema_article_publisher: 'a:3:{s:5:"@type";s:10:"MusicGroup";s:3:"@id";s:33:"https://deepcutsmusic.co.uk/#band";s:4:"name";s:9:"Deep Cuts";}'
+  schema_web_page_type: WebPage
+  schema_web_page_in_language: en-GB
+  schema_web_page_publisher: 'a:3:{s:5:"@type";s:10:"MusicGroup";s:3:"@id";s:33:"https://deepcutsmusic.co.uk/#band";s:4:"name";s:9:"Deep Cuts";}'
+  schema_organization_type: MusicGroup
+  schema_organization_id: 'https://deepcutsmusic.co.uk/#band'
+  schema_organization_name: 'Deep Cuts'
+  schema_organization_url: 'https://deepcutsmusic.co.uk/'
+  schema_organization_same_as: 'https://www.instagram.com/deepcutsmusic/'
+  schema_organization_logo: 'a:2:{s:5:"@type";s:11:"ImageObject";s:3:"url";s:66:"https://deepcutsmusic.co.uk/themes/custom/deepcutsmusic11/logo.png";}'
+  schema_web_site_type: WebSite
+  schema_web_site_id: 'https://deepcutsmusic.co.uk/#website'
+  schema_web_site_url: 'https://deepcutsmusic.co.uk/'
+  schema_web_site_name: 'Deep Cuts'
+  schema_web_site_in_language: en-GB
+  schema_web_site_publisher: 'a:3:{s:5:"@type";s:10:"MusicGroup";s:3:"@id";s:33:"https://deepcutsmusic.co.uk/#band";s:4:"name";s:9:"Deep Cuts";}'

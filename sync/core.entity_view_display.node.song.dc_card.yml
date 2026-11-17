@@ -1,0 +1,34 @@
+uuid: d9401647-dc8c-48aa-b555-58070c69708e
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.dc_card
+    - field.field.node.song.field_artist
+    - field.field.node.song.field_display_order
+    - field.field.node.song.field_repertoire_category
+    - node.type.song
+  module:
+    - user
+id: node.song.dc_card
+targetEntityType: node
+bundle: song
+mode: dc_card
+content:
+  field_artist:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_display_order: true
+  field_repertoire_category: true

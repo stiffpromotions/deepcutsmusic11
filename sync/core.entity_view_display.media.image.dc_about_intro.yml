@@ -1,0 +1,32 @@
+uuid: 9eb867f3-4665-47d5-a1be-14852a71a773
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.dc_about_intro
+    - field.field.media.image.field_media_image
+    - image.style.dc_about_intro
+    - media.type.image
+  module:
+    - image
+id: media.image.dc_about_intro
+targetEntityType: media
+bundle: image
+mode: dc_about_intro
+content:
+  field_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: dc_about_intro
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

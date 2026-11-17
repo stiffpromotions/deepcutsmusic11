@@ -1,0 +1,29 @@
+uuid: c3a16e8d-dc02-4b7e-be7f-adc6a9d8e68c
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.node.logo.field_logo
+    - image.style.logo
+    - node.type.logo
+  module:
+    - image
+    - user
+id: node.logo.default
+targetEntityType: node
+bundle: logo
+mode: default
+content:
+  field_logo:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: logo
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 103
+    region: content
+hidden:
+  links: true

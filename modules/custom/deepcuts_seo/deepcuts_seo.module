@@ -1,0 +1,109 @@
+<?php
+
+/**
+ * @file
+ * Integrates the Deep Cuts editorial model with Metatag and Simple XML Sitemap.
+ */
+
+use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\deepcuts_seo\SeoPolicy;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_metatags_alter().
+ */
+function deepcuts_seo_metatags_alter(array &$tags, array &$context): void {
+  $node = $context['entity'] ?? NULL;
+  $route = \Drupal::routeMatch()->getRouteName();
+  $public_content = $node instanceof NodeInterface && SeoPolicy::isIndexableNode($node)
+    && ($route === 'entity.node.canonical' || !empty($node->in_preview));
+  if (!$public_content) {
+    $tags['robots'] = 'noindex, follow';
+    $tags['canonical_url'] = '<none>';
+    $tags['shortlink'] = '<none>';
+    foreach (array_keys($tags) as $key) {
+      if (str_starts_with($key, 'schema_') || in_array($key, ['og_url', 'og_image', 'twitter_cards_image'], TRUE)) { unset($tags[$key]); }
+    }
+    return;
+  }
+  $url = SeoPolicy::canonical($node);
+  // Keep the entity graph tied to the same configured public origin.
+  $base = SeoPolicy::baseUrl();
+  $publisher = serialize(['@type' => 'MusicGroup', '@id' => $base . '/#band', 'name' => 'Deep Cuts']);
+  foreach ([
+    'schema_organization_id' => $base . '/#band', 'schema_organization_url' => $base . '/',
+    'schema_organization_logo' => serialize(['@type' => 'ImageObject', 'url' => $base . '/themes/custom/deepcutsmusic11/logo.png']),
+    'schema_organization_same_as' => implode(', ', \Drupal::config('deepcuts_seo.settings')->get('social_profiles')),
+    'schema_web_site_id' => $base . '/#website', 'schema_web_site_url' => $base . '/',
+    'schema_web_site_publisher' => $publisher, 'schema_web_page_publisher' => $publisher, 'schema_article_publisher' => $publisher,
+  ] as $key => $value) {
+    if (isset($tags[$key])) { $tags[$key] = $value; }
+  }
+  $tags['canonical_url'] = $tags['og_url'] = $url;
+  $tags['shortlink'] = '<none>';
+  if (!SeoPolicy::isPublicRequest(\Drupal::request())) { $tags['robots'] = 'noindex, follow'; }
+  foreach (['og_title' => 'title', 'twitter_cards_title' => 'title', 'og_description' => 'description', 'twitter_cards_description' => 'description'] as $target => $source) {
+    if (empty($tags[$target])) { $tags[$target] = $tags[$source] ?? ''; }
+  }
+  $image = SeoPolicy::publicUrl(\Drupal::config('deepcuts_seo.settings')->get('fallback_image'));
+  $alt = 'Deep Cuts performing live';
+  if ($node->hasField('field_social_image') && ($media = $node->get('field_social_image')->entity)
+    && $media->access('view') && $media->hasField('field_media_image') && ($file = $media->get('field_media_image')->entity)) {
+    $style = \Drupal\image\Entity\ImageStyle::load('deepcuts_social');
+    $image = SeoPolicy::publicUrl(parse_url($style->buildUrl($file->getFileUri()), PHP_URL_PATH));
+    // Preserve the derivative access token query string.
+    $query = parse_url($style->buildUrl($file->getFileUri()), PHP_URL_QUERY);
+    if ($query) { $image .= '?' . $query; }
+    $alt = $media->get('field_media_image')->alt ?: $alt;
+  }
+  if (empty($tags['og_image'])) {
+    $tags['og_image'] = $image;
+    $tags['og_image_alt'] = $alt;
+    $tags['og_image_width'] = '1200';
+    $tags['og_image_height'] = '630';
+  }
+  if (empty($tags['twitter_cards_image'])) {
+    $tags['twitter_cards_image'] = $tags['og_image'];
+    $tags['twitter_cards_image_alt'] = $tags['og_image_alt'] ?? $alt;
+  }
+  $tags['schema_web_page_id'] = $url . '#webpage';
+  $tags['schema_web_page_description'] = $tags['description'] ?? '';
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function deepcuts_seo_page_attachments(array &$attachments): void {
+  $metadata = new CacheableMetadata();
+  $metadata->addCacheContexts(['url.site', 'url.path']);
+  $metadata->addCacheTags(['config:deepcuts_seo.settings', 'config:image.style.deepcuts_social', 'path_alias_list']);
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof NodeInterface) {
+    $metadata->addCacheableDependency($node);
+    if ($node->hasField('field_social_image') && ($media = $node->get('field_social_image')->entity)) {
+      $metadata->addCacheableDependency($media)->addCacheableDependency($media->access('view', NULL, TRUE));
+      if ($file = $media->get('field_media_image')->entity) { $metadata->addCacheableDependency($file); }
+    }
+  }
+  $metadata->applyTo($attachments);
+}
+
+/**
+ * Implements hook_simple_sitemap_links_alter().
+ */
+function deepcuts_seo_simple_sitemap_links_alter(array &$links, $sitemap): void {
+  foreach ($links as $key => &$link) {
+    $info = $link['meta']['entity_info'] ?? [];
+    $path = '/' . ltrim($link['meta']['path'] ?? '', '/');
+    $system_path = \Drupal::service('path_alias.manager')->getPathByAlias($path);
+    if (($info['entity_type'] ?? '') === 'node') { $system_path = '/node/' . $info['id']; }
+    if ($path === '/' && !$info) { $system_path = \Drupal::config('system.site')->get('page.front'); }
+    if (!preg_match('@^/node/(\d+)$@', $system_path, $match)
+      || !($node = \Drupal\node\Entity\Node::load($match[1])) || !SeoPolicy::inSitemap($node)) {
+      unset($links[$key]);
+      continue;
+    }
+    $link['url'] = SeoPolicy::canonical($node);
+    foreach ($link['alternate_urls'] ?? [] as $language => $unused) { $link['alternate_urls'][$language] = $link['url']; }
+  }
+}

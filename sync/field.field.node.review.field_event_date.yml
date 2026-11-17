@@ -1,0 +1,21 @@
+uuid: f9cbfee1-631a-4980-ac7f-e629baf65150
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_date
+    - node.type.review
+  module:
+    - datetime
+id: node.review.field_event_date
+field_name: field_event_date
+entity_type: node
+bundle: review
+label: 'Event date'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

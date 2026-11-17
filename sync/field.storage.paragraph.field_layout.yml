@@ -1,0 +1,27 @@
+uuid: b37617bc-4b32-468b-aa63-b1646821e280
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_layout
+field_name: field_layout
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: grid
+      label: Grid
+    -
+      value: carousel
+      label: 'Swipeable carousel'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

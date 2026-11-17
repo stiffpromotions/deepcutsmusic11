@@ -1,0 +1,23 @@
+uuid: d569f899-fef8-4a1e-8a49-50230d736d0a
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_width
+    - paragraphs.paragraphs_type.page_breaker
+  module:
+    - options
+id: paragraph.page_breaker.field_width
+field_name: field_width
+entity_type: paragraph
+bundle: page_breaker
+label: 'Content width'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: standard
+default_value_callback: ''
+settings: {  }
+field_type: list_string

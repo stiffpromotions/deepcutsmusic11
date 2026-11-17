@@ -1,0 +1,21 @@
+name: 'Deep Cuts Basic page'
+description: 'Provides the core Basic page configuration while preserving existing site configuration, including en-gb shared view modes.'
+type: 'Content type'
+install:
+  - node
+  - path
+config:
+  strict: false
+  import:
+    node:
+      - core.entity_view_mode.node.full
+      - core.entity_view_mode.node.rss
+      - core.entity_view_mode.node.teaser
+      - system.action.node_delete_action
+      - system.action.node_make_sticky_action
+      - system.action.node_make_unsticky_action
+      - system.action.node_promote_action
+      - system.action.node_publish_action
+      - system.action.node_save_action
+      - system.action.node_unpromote_action
+      - system.action.node_unpublish_action

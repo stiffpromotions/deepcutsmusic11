@@ -1,0 +1,20 @@
+uuid: 4389e21b-5ba2-401a-b94e-a7384bbbb52d
+langcode: en
+status: true
+dependencies:
+  theme:
+    - deepcutsmusic11
+_core:
+  default_config_hash: 5olT5CtFS2pe7gy6sN4apZ_3FItqt_mflAEJa6Wh_JY
+id: deepcutsmusic11_page_title
+theme: deepcutsmusic11
+region: content
+weight: -6
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

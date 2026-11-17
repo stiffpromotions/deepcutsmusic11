@@ -1,0 +1,22 @@
+uuid: fb46df86-a0a7-4469-8c76-271c8f1e4921
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - deepcutsmusic11
+_core:
+  default_config_hash: BXT_cxPZGIoCKpNrgucYtVAcZJUd7WfkvHO-C9LaRcM
+id: deepcutsmusic11_messages
+theme: deepcutsmusic11
+region: content
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

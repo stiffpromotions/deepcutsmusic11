@@ -1,0 +1,28 @@
+uuid: 0b1aacc9-5194-48b1-9a0a-06ca6142b7b5
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.feature_card.field_heading
+    - field.field.paragraph.feature_card.field_link
+    - field.field.paragraph.feature_card.field_section_image
+    - field.field.paragraph.feature_card.field_text
+    - paragraphs.paragraphs_type.feature_card
+  module:
+    - text
+id: paragraph.feature_card.default
+targetEntityType: paragraph
+bundle: feature_card
+mode: default
+content:
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_heading: true
+  field_link: true
+  field_section_image: true

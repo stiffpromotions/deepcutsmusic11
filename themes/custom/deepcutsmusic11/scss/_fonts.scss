@@ -1,0 +1,10 @@
+// Self-hosted Google Fonts assets; see fonts/rethink-sans/OFL.txt.
+@each $weight in 400, 500, 600, 700 {
+  @font-face {
+    font-family: 'Rethink Sans';
+    font-style: normal;
+    font-weight: $weight;
+    font-display: swap;
+    src: url('../fonts/rethink-sans/rethink-sans-#{$weight}.ttf') format('truetype');
+  }
+}

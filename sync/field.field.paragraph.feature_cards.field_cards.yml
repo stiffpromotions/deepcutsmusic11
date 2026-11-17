@@ -1,0 +1,26 @@
+uuid: e46ed9a5-c25e-4e5a-8c13-6ab074192f5d
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cards
+    - paragraphs.paragraphs_type.feature_card
+    - paragraphs.paragraphs_type.feature_cards
+  module:
+    - entity_reference_revisions
+id: paragraph.feature_cards.field_cards
+field_name: field_cards
+entity_type: paragraph
+bundle: feature_cards
+label: Cards
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      feature_card: feature_card
+field_type: entity_reference_revisions

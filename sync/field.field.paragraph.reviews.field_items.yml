@@ -1,0 +1,25 @@
+uuid: 7053c9bc-7a8e-4a85-abdc-e0d3d75ba8ad
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_items
+    - node.type.review
+    - paragraphs.paragraphs_type.reviews
+id: paragraph.reviews.field_items
+field_name: field_items
+entity_type: paragraph
+bundle: reviews
+label: 'Selected reviews (leave empty for featured reviews)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      review: review
+    auto_create: false
+field_type: entity_reference

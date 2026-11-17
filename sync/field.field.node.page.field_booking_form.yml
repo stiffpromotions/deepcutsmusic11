@@ -1,0 +1,23 @@
+uuid: bab72e81-2ed1-451a-b391-48393fd45692
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_booking_form
+    - node.type.page
+  module:
+    - webform
+id: node.page.field_booking_form
+field_name: field_booking_form
+entity_type: node
+bundle: page
+label: 'Booking form'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings: {  }
+field_type: webform

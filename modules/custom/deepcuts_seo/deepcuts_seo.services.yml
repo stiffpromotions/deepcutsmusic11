@@ -1,0 +1,5 @@
+services:
+  deepcuts_seo.response_subscriber:
+    class: Drupal\deepcuts_seo\EventSubscriber\SeoResponseSubscriber
+    tags:
+      - { name: event_subscriber }

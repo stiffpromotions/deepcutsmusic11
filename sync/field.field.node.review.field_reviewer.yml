@@ -1,0 +1,19 @@
+uuid: daa15488-9f95-4a8f-a38b-0fdaeaad5e37
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reviewer
+    - node.type.review
+id: node.review.field_reviewer
+field_name: field_reviewer
+entity_type: node
+bundle: review
+label: 'Reviewer display name'
+description: 'The name or attribution approved for public display.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

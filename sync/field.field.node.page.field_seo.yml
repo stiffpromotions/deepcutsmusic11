@@ -1,0 +1,21 @@
+uuid: d30145c0-ebbc-4977-84ba-7992c80a112d
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_seo
+    - node.type.page
+  module:
+    - yoast_seo
+id: node.page.field_seo
+field_name: field_seo
+entity_type: node
+bundle: page
+label: 'Editorial SEO guidance'
+description: 'Optional focus keyphrase and analysis. Scores are guidance, not publication requirements. Use Update analysis after editing page sections.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: yoast_seo

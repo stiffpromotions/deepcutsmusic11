@@ -1,0 +1,67 @@
+uuid: 111a551e-3705-48a9-9859-8ffdb9214e33
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.node.package.body
+    - field.field.node.package.field_add_ons
+    - field.field.node.package.field_display_order
+    - field.field.node.package.field_image
+    - field.field.node.package.field_inclusions
+    - field.field.node.package.field_price_wording
+    - node.type.package
+  module:
+    - text
+    - user
+id: node.package.default
+targetEntityType: node
+bundle: package
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_add_ons:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_inclusions:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_price_wording:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_display_order: true

@@ -1,0 +1,4 @@
+public_base_url: 'https://deepcutsmusic.co.uk'
+fallback_image: '/themes/custom/deepcutsmusic11/images/social-share.jpg'
+social_profiles:
+  - 'https://www.instagram.com/deepcutsmusic/'

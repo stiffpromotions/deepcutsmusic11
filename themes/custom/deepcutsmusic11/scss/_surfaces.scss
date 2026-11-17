@@ -1,0 +1,34 @@
+// Surface utilities can also be used inside CKEditor content.
+@each $name, $colour in $dc-surfaces {
+  .bg-#{$name} {
+    background-color: $colour;
+    color: $dc-text-body;
+  }
+}
+
+.text-accent, .text-pod {
+  color: $dc-text-muted;
+}
+
+.surface-dark, .surface-brand {
+  color: $dc-text-on-dark;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+  }
+
+  a:not(.btn):not(.page-link) {
+    color: inherit;
+
+    &:hover {
+      color: $dc-orange-200;
+    }
+
+    &:focus-visible {
+      outline-color: $dc-orange-200;
+    }
+  }
+}
+
+.surface-dark { background-color: $dc-text-heading; }
+.surface-brand { background-color: $dc-primary; }

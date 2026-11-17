@@ -1,0 +1,22 @@
+uuid: 48727fbe-0e35-4b78-b5a1-985a147b5dd7
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.page_breaker
+  module:
+    - text
+id: paragraph.page_breaker.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: page_breaker
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

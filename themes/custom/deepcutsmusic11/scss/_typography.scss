@@ -1,0 +1,37 @@
+// Figma Styles frame: sizes assume the browser's standard 16px root size.
+// Bootstrap RFS keeps headings responsive below the desktop breakpoint.
+.hero-title {
+  @include font-size(3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -.03em;
+}
+
+h1, .h1 {
+  line-height: 1.15;
+  letter-spacing: -.02em;
+}
+
+h2, .h2 {
+  line-height: 1.2;
+  letter-spacing: -.01em;
+}
+
+h3, .h3 {
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: normal;
+}
+
+small, .small {
+  font-size: .875rem;
+  line-height: 1.6;
+}
+
+// Apply explicitly to site navigation, avoiding admin toolbars and local tasks.
+.site-navigation, .navigation-text {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: .005em;
+}

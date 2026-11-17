@@ -1,0 +1,10 @@
+uuid: 30df2ccc-eb9f-4422-99db-b47770ea828b
+langcode: en-gb
+status: true
+dependencies: {  }
+id: content_listing
+label: 'Content listing'
+icon_uuid: null
+icon_default: null
+description: 'Deep Cuts reusable content listing section.'
+behavior_plugins: {  }

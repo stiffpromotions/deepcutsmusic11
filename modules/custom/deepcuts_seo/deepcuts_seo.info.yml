@@ -1,0 +1,13 @@
+name: Deep Cuts SEO
+type: module
+description: 'Canonical URLs, sharing fallbacks, indexing policy and sitemap safeguards for Deep Cuts.'
+core_version_requirement: ^11
+package: Deep Cuts
+dependencies:
+  - metatag:metatag
+  - metatag:metatag_open_graph
+  - metatag:metatag_twitter_cards
+  - simple_sitemap:simple_sitemap
+  - schema_metatag:schema_organization
+  - schema_metatag:schema_web_site
+  - schema_metatag:schema_web_page

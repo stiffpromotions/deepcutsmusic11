@@ -1,0 +1,11 @@
+uuid: f1c1bcf0-480e-4ddd-aee0-720ee895be9e
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - node
+id: node.dc_card
+label: 'Deep Cuts card'
+description: null
+targetEntityType: node
+cache: true

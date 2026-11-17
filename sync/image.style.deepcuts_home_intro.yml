@@ -1,0 +1,15 @@
+uuid: 91dc6b66-02eb-4e10-9379-64f20c0a97bc
+langcode: en-gb
+status: true
+dependencies: {  }
+name: deepcuts_home_intro
+label: 'Homepage introduction (1280px)'
+effects:
+  f9952637-2ead-403a-88aa-1a91c0c6a5f4:
+    uuid: f9952637-2ead-403a-88aa-1a91c0c6a5f4
+    id: image_scale
+    weight: 0
+    data:
+      width: 1280
+      height: null
+      upscale: false

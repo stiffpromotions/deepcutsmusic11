@@ -1,0 +1,24 @@
+uuid: dd60c301-fc47-46c2-9d39-6ff15b5747da
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_items
+    - node.type.review
+    - paragraphs.paragraphs_type.home_reviews
+id: paragraph.home_reviews.field_items
+field_name: field_items
+entity_type: paragraph
+bundle: home_reviews
+label: 'First review'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      review: review
+field_type: entity_reference

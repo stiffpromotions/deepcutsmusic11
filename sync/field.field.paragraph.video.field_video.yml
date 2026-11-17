@@ -1,0 +1,26 @@
+uuid: c40df63e-7779-4bd0-8f44-ceed5fabd62e
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_video
+    - media.type.remote_video
+    - media.type.video
+    - paragraphs.paragraphs_type.video
+id: paragraph.video.field_video
+field_name: field_video
+entity_type: paragraph
+bundle: video
+label: Video
+description: 'Select a video or add Remote video with a YouTube URL. Edit the Media item to replace its URL later.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      remote_video: remote_video
+      video: video
+field_type: entity_reference
