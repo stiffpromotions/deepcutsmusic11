@@ -7,6 +7,8 @@ node_modules/
 # Ignore ddev config files
 /.ddev
 
+# Ignore graphics files
+/_resources
 
 # Ignore configuration files that may contain sensitive information
 /sites/*/*settings*.php

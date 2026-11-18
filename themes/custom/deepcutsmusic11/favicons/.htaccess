@@ -1,0 +1,4 @@
+# Serve the web app manifest with its registered MIME type on Apache/cPanel.
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+</IfModule>

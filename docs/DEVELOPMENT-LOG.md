@@ -735,3 +735,21 @@
   themed card links (homepage, generic cards, offerings and members), plus
   Bootstrap cards. Existing colour treatments and focus outlines remain.
 - Compiled site and CKEditor styles successfully and rebuilt Drupal caches.
+
+## 18 November 2026 — Theme favicons
+
+- Copied the supplied `_resources/Favicon/favicon/` set to the custom theme's
+  `favicons/` directory, and replaced the theme's default `favicon.ico`.
+- Attached scalable SVG and 96px PNG browser icons, the 180px Apple touch icon,
+  web app manifest, Deep Cuts application names and purple theme colour through
+  HTML preprocess. Drupal retains the ICO fallback. These attachments also apply
+  when this theme renders maintenance/error pages.
+- Made manifest icon URLs relative to the theme directory and launch/scope/ID
+  URLs resolve to the site root, including subdirectory installations. Kept
+  supplied Android 192px/512px artwork with `purpose: any`: its logo reaches beyond
+  the maskable safe area, so marking it maskable could crop the design. Added an
+  Apache/cPanel MIME declaration for `.webmanifest`.
+- Verified HTTP links on Home, login and 404 pages; all five linked assets and
+  both manifest icons return 200, and the manifest launch URL resolves correctly.
+  PHP syntax passes and Drupal caches were rebuilt. No configuration changes
+  were needed; publish the custom theme files with the beta.

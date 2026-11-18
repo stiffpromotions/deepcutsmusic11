@@ -12,6 +12,23 @@ use Drupal\node\NodeInterface;
  * Implements hook_preprocess_html().
  */
 function deepcutsmusic11_preprocess_html(array &$variables): void {
+  // Theme-owned assets work on local/live hosts and subdirectory installs.
+  // Drupal supplies the theme's favicon.ico as the legacy browser fallback.
+  $icons = base_path() . \Drupal::service('extension.list.theme')->getPath('deepcutsmusic11') . '/favicons/';
+  foreach ([
+    ['rel' => 'icon', 'type' => 'image/png', 'sizes' => '96x96', 'href' => $icons . 'favicon-96x96.png'],
+    ['rel' => 'icon', 'type' => 'image/svg+xml', 'sizes' => 'any', 'href' => $icons . 'favicon.svg'],
+    ['rel' => 'apple-touch-icon', 'sizes' => '180x180', 'href' => $icons . 'apple-touch-icon.png'],
+    ['rel' => 'manifest', 'type' => 'application/manifest+json', 'href' => $icons . 'site.webmanifest'],
+  ] as $link) {
+    $variables['#attached']['html_head_link'][] = [$link, FALSE];
+  }
+  foreach (['theme-color' => '#572998', 'application-name' => 'Deep Cuts', 'apple-mobile-web-app-title' => 'Deep Cuts'] as $name => $content) {
+    $variables['#attached']['html_head'][] = [
+      ['#tag' => 'meta', '#attributes' => ['name' => $name, 'content' => $content]],
+      'deepcuts_' . $name,
+    ];
+  }
   if (in_array('maintenance-page', $variables['html']['#attributes']['class'] ?? [], TRUE)) {
     $variables['head_title'] = ['title' => t('Back on stage soon'), 'name' => \Drupal::config('system.site')->get('name')];
     $variables['#attached']['html_head'][] = [
