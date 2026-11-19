@@ -171,7 +171,7 @@ function deepcutsmusic11_preprocess_paragraph(array &$variables): void {
     $variables['card_url'] = $p->field_link->isEmpty() ? NULL : $p->field_link->first()->getUrl();
     $media = $p->field_section_image->entity;
     if ($media && $media->access('view')) {
-      $variables['card_image'] = \Drupal::entityTypeManager()->getViewBuilder('media')->viewField($media->field_media_image, ['type' => 'image', 'label' => 'hidden', 'settings' => ['image_style' => 'large', 'image_link' => '', 'image_loading' => ['attribute' => 'lazy']]]);
+      $variables['card_image'] = \Drupal::entityTypeManager()->getViewBuilder('media')->viewField($media->field_media_image, ['type' => 'image', 'label' => 'hidden', 'settings' => ['image_style' => 'dc_package_style', 'image_link' => '', 'image_loading' => ['attribute' => 'lazy']]]);
     }
   }
   if ($p->bundle() === 'home_reviews') {

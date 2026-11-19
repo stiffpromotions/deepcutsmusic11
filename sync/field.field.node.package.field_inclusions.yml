@@ -13,7 +13,7 @@ entity_type: node
 bundle: package
 label: Inclusions
 description: 'Describe what is included in this package; lists are supported.'
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

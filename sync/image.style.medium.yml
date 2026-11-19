@@ -1,23 +1,27 @@
 uuid: fa8de6e6-1709-491d-aacb-2cb63999efd6
 langcode: en-gb
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - image_effects
 _core:
   default_config_hash: aUG-EM9kKTKhcsdttoYmG5tug7pU2mNOQzcpp91jfFQ
 name: medium
 label: 'Medium (220×220)'
 effects:
-  bddf0d06-42f9-4c75-a700-a33cafa25ea0:
-    uuid: bddf0d06-42f9-4c75-a700-a33cafa25ea0
-    id: image_scale
-    weight: 0
-    data:
-      width: 220
-      height: 220
-      upscale: false
   c410ed2f-aa30-4d9c-a224-d2865d9188cd:
     uuid: c410ed2f-aa30-4d9c-a224-d2865d9188cd
     id: image_convert_avif
     weight: 2
     data:
       extension: webp
+  22383c4f-df63-4d6f-8d4f-e9438f2e49a8:
+    uuid: 22383c4f-df63-4d6f-8d4f-e9438f2e49a8
+    id: image_effects_scale_and_smart_crop
+    weight: 3
+    data:
+      width: '440'
+      height: '440'
+      upscale: false
+      simulate: false
+      algorithm: entropy_slice
