@@ -188,7 +188,7 @@
 }
 
 // Keep section headings and card rows on the same edges as intro box borders.
-// Bordered sections retain their internal padding for readable copy.
-.dc-aligned-content .dc-section:not(.dc-section--bordered) > .dc-section__inner {
+// Bordered sections and inset song panels retain padding for readable copy.
+.dc-aligned-content .dc-section:not(.dc-section--bordered):not(.dc-section--listing-song) > .dc-section__inner {
   padding-inline: 0;
 }

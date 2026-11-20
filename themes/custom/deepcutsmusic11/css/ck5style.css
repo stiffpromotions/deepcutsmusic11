@@ -13028,7 +13028,7 @@ a > .ck-content code {
     text-align: center;
   }
 }
-.ck-content .dc-aligned-content .dc-section:not(.dc-section--bordered) > .dc-section__inner {
+.ck-content .dc-aligned-content .dc-section:not(.dc-section--bordered):not(.dc-section--listing-song) > .dc-section__inner {
   padding-inline: 0;
 }
 .ck-content .dc-videos .page-sections {

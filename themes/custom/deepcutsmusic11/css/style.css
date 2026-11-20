@@ -13853,7 +13853,7 @@ a:focus-visible {
     text-align: center;
   }
 }
-.dc-aligned-content .dc-section:not(.dc-section--bordered) > .dc-section__inner {
+.dc-aligned-content .dc-section:not(.dc-section--bordered):not(.dc-section--listing-song) > .dc-section__inner {
   padding-inline: 0;
 }
 
