@@ -1,4 +1,9 @@
 global-styling:
+  js:
+    js/reveal.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
   css:
     theme:
       css/fonts.css: {}

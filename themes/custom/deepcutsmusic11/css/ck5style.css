@@ -12340,6 +12340,9 @@ a > .ck-content code {
     aspect-ratio: 18/5;
   }
 }
+.ck-content .page-hero__content.dc-home-container {
+  padding-inline: calc(var(--bs-gutter-x) * 0.5 + 0.5rem);
+}
 @media (min-width: 768px) {
   .ck-content .site-header .navbar-brand img {
     height: 60px;
@@ -12786,7 +12789,7 @@ a > .ck-content code {
   font-size: 1.5rem;
 }
 .ck-content .dc-section--listing-band-member .view-content {
-  align-items: center;
+  align-items: start;
   gap: 2.5rem;
 }
 .ck-content .dc-member {
@@ -12886,7 +12889,7 @@ a > .ck-content code {
   }
 }
 .ck-content .dc-section--listing-package .view-content, .ck-content .dc-section--listing-add-on .view-content {
-  align-items: center;
+  align-items: start;
   gap: 2rem;
 }
 @media (min-width: 992px) {
@@ -12930,7 +12933,7 @@ a > .ck-content code {
   padding-inline: 0;
 }
 .ck-content .dc-section--listing-review .view-content {
-  align-items: center;
+  align-items: start;
   gap: 2.5rem;
 }
 @media (min-width: 768px) {
@@ -12951,6 +12954,35 @@ a > .ck-content code {
 }
 .ck-content .dc-section--listing-review .dc-review blockquote p:last-child {
   margin-bottom: 0;
+}
+.ck-content .dc-section--listing-review .dc-review {
+  transition: background-color 1.2s ease-out, border-color 1.2s ease-out, color 1.2s ease-out;
+}
+.ck-content .dc-section--listing-review .dc-review blockquote, .ck-content .dc-section--listing-review .dc-review figcaption {
+  transition: color 1.2s ease-out;
+}
+.ck-content .dc-section--listing-review .dc-review:focus-within {
+  background: #512b92;
+  border-color: #512b92;
+  color: #fcfaf6;
+}
+.ck-content .dc-section--listing-review .dc-review:focus-within blockquote, .ck-content .dc-section--listing-review .dc-review:focus-within figcaption, .ck-content .dc-section--listing-review .dc-review:focus-within a {
+  color: inherit;
+}
+@media (hover: hover) {
+  .ck-content .dc-section--listing-review .dc-review:hover {
+    background: #512b92;
+    border-color: #512b92;
+    color: #fcfaf6;
+  }
+  .ck-content .dc-section--listing-review .dc-review:hover blockquote, .ck-content .dc-section--listing-review .dc-review:hover figcaption, .ck-content .dc-section--listing-review .dc-review:hover a {
+    color: inherit;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ck-content .dc-section--listing-review .dc-review, .ck-content .dc-section--listing-review .dc-review blockquote, .ck-content .dc-section--listing-review .dc-review figcaption {
+    transition: none;
+  }
 }
 .ck-content .dc-faq {
   padding: 1.5rem;
@@ -12995,6 +13027,9 @@ a > .ck-content code {
   .ck-content .node--id-5 .dc-section--listing-song .dc-section__heading {
     text-align: center;
   }
+}
+.ck-content .dc-aligned-content .dc-section:not(.dc-section--bordered) > .dc-section__inner {
+  padding-inline: 0;
 }
 .ck-content .dc-videos .page-sections {
   max-width: 75rem;
@@ -13487,7 +13522,7 @@ a > .ck-content code {
 .ck-content .dc-home-cards {
   display: grid;
   gap: 2rem;
-  align-items: center;
+  align-items: start;
   margin-bottom: clamp(2rem, 5.55vw, 5rem);
 }
 @media (min-width: 768px) {
@@ -13616,6 +13651,21 @@ a > .ck-content code {
 @media (prefers-reduced-motion: reduce) {
   .ck-content .dc-home-video__screen, .ck-content .dc-home-reviews.is-enhanced .views-row {
     transition: none;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ck-content .dc-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  .ck-content .dc-reveal.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1.2s ease-in-out, transform 1.2s ease-out;
+  }
+  .ck-content .dc-reveal:focus-within {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

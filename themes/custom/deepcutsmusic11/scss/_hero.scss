@@ -36,3 +36,8 @@
 
   @include media-breakpoint-up(md) { aspect-ratio: 18 / 5; }
 }
+
+// Match Bootstrap's additional .region-content inset below the hero.
+.page-hero__content.dc-home-container {
+  padding-inline: calc(var(--bs-gutter-x) * .5 + .5rem);
+}

@@ -133,6 +133,18 @@ function _deepcutsmusic11_page_hero(): ?array {
  * Implements hook_preprocess_page().
  */
 function deepcutsmusic11_preprocess_page(array &$variables): void {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $variables['use_home_content_width'] = FALSE;
+  if ($node instanceof NodeInterface) {
+    $path = '/node/' . $node->id();
+    foreach (['/about', '/packages', '/repertoire'] as $alias) {
+      if (\Drupal::service('path_alias.manager')->getPathByAlias($alias) === $path) {
+        $variables['use_home_content_width'] = TRUE;
+        break;
+      }
+    }
+    $variables['#cache']['tags'][] = 'path_alias_list';
+  }
   $variables['page_hero'] = _deepcutsmusic11_page_hero();
   if ($variables['page_hero']) {
     $variables['#attached']['library'][] = 'deepcutsmusic11/hero';

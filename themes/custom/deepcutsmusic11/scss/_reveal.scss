@@ -1,0 +1,16 @@
+// Reveal in view: fade from transparent and rise into position, with replay.
+@media (prefers-reduced-motion: no-preference) {
+  .dc-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  .dc-reveal.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1.2s ease-in-out, transform 1.2s ease-out;
+  }
+  .dc-reveal:focus-within {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

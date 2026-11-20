@@ -65,7 +65,7 @@
 .dc-card img { width: 100%; height: auto; }
 .dc-card__copy { padding: 1.5rem; h3 { font-size: 1.5rem; } }
 .dc-section--listing-band-member {
-  .view-content { align-items: center; gap: 2.5rem; }
+  .view-content { align-items: start; gap: 2.5rem; }
 }
 .dc-member {
   border: 1px solid $dc-purple-100;
@@ -108,7 +108,7 @@
   }
 }
 .dc-section--listing-package, .dc-section--listing-add-on {
-  .view-content { align-items: center; gap: 2rem; }
+  .view-content { align-items: start; gap: 2rem; }
   @include media-breakpoint-up(lg) {
     .view-content { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   }
@@ -127,17 +127,39 @@
 .dc-review__attribution .field { display: inline; }
 .dc-review .field--name-field-review-note { font-style: italic; margin-top: .25rem; }
 
-// Testimonials: centred cards with natural heights and two columns from md.
+// Testimonials: top-aligned cards with natural heights and two columns from md.
 .dc-section--listing-review {
   .dc-section__inner { padding-inline: 0; }
   .view-content {
-    align-items: center;
+    align-items: start;
     gap: 2.5rem;
     @include media-breakpoint-up(md) { row-gap: 3rem; }
   }
   .dc-review { padding: clamp(1.5rem, 4vw, 3rem); border: 1px solid $dc-purple-100; }
   .dc-review blockquote { color: $dc-text-heading; font-weight: 600; font-size: 1.375rem; line-height: 1.4; margin-bottom: 1.5rem; }
   .dc-review blockquote p:last-child { margin-bottom: 0; }
+  .dc-review {
+    // Keep the hover colour on the card, independent of its reveal wrapper.
+    transition: background-color 1.2s ease-out, border-color 1.2s ease-out, color 1.2s ease-out;
+    blockquote, figcaption { transition: color 1.2s ease-out; }
+    &:focus-within {
+      background: $dc-purple-500;
+      border-color: $dc-purple-500;
+      color: $dc-text-on-dark;
+      blockquote, figcaption, a { color: inherit; }
+    }
+    @media (hover: hover) {
+      &:hover {
+        background: $dc-purple-500;
+        border-color: $dc-purple-500;
+        color: $dc-text-on-dark;
+        blockquote, figcaption, a { color: inherit; }
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      &, blockquote, figcaption { transition: none; }
+    }
+  }
 }
 .dc-faq { padding: 1.5rem; border-bottom: 1px solid $dc-divider; summary { font-weight: 600; cursor: pointer; } }
 .dc-faq[open] summary { margin-bottom: 1rem; }
@@ -163,4 +185,10 @@
   .node--id-5 .dc-section--listing-song .dc-section__heading {
     text-align: center;
   }
+}
+
+// Keep section headings and card rows on the same edges as intro box borders.
+// Bordered sections retain their internal padding for readable copy.
+.dc-aligned-content .dc-section:not(.dc-section--bordered) > .dc-section__inner {
+  padding-inline: 0;
 }

@@ -100,9 +100,9 @@ set footer_classes = ' ' ~
 
   {% if page_hero %}
     {% if page_hero.video_id %}
-      {% include '@deepcutsmusic11/components/home-video.html.twig' with { hero: page_hero } only %}
+      {% include '@deepcutsmusic11/components/home-video.html.twig' with { hero: page_hero, use_home_content_width: use_home_content_width } only %}
     {% else %}
-      {% include '@deepcutsmusic11/components/page-hero.html.twig' with { hero: page_hero } only %}
+      {% include '@deepcutsmusic11/components/page-hero.html.twig' with { hero: page_hero, use_home_content_width: use_home_content_width } only %}
     {% endif %}
   {% endif %}
 
@@ -111,7 +111,7 @@ set footer_classes = ' ' ~
       <div class="dc-logos__viewport">{{ home_logos }}</div>
     </section>
   {% endif %}
-  <div class="{{ b5_top_container }}{{ is_front ? ' dc-home-container' : '' }}">
+  <div class="{{ b5_top_container }}{{ (is_front or use_home_content_width) ? ' dc-home-container' : '' }}{{ use_home_content_width ? ' dc-aligned-content' : '' }}">
     {% if page.breadcrumb and not page_hero %}
       {{ page.breadcrumb }}
     {% endif %}

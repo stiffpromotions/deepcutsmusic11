@@ -38,7 +38,7 @@
   .dc-section--image-text .dc-section__copy { max-width: 31rem; margin-inline: auto; }
 }
 .dc-home-cards {
-  display: grid; gap: 2rem; align-items: center; margin-bottom: clamp(2rem, 5.55vw, 5rem);
+  display: grid; gap: 2rem; align-items: start; margin-bottom: clamp(2rem, 5.55vw, 5rem);
   @include media-breakpoint-up(md) { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 4.44vw, 4rem); }
 }
 .dc-home-card {

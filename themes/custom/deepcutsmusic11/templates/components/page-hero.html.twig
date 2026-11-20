@@ -1,7 +1,7 @@
 {# Decorative image: the title supplies the section's meaning. #}
 <section class="page-hero" aria-labelledby="page-hero-title">
   <div class="page-hero__image" aria-hidden="true">{{ hero.image }}</div>
-  <div class="container page-hero__content">
+  <div class="container page-hero__content{{ use_home_content_width ? ' dc-home-container' : '' }}">
     <h1 id="page-hero-title" class="page-hero__title">{{ hero.title }}</h1>
   </div>
 </section>
